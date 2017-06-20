@@ -21,6 +21,8 @@
 </template>
 
 <style lang="scss">
+@import '~assets/media-query';
+
 /* general */
 body {
   margin: 0;
@@ -43,7 +45,7 @@ a {
 ul {
   margin: 0;
   padding: 0;
-  padding-right: 18px;
+  padding-left: 18px;
 }
 
 li {
@@ -64,6 +66,14 @@ li {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  @include not-phone {
+    flex-direction: row;
+    align-items: flex-start;
+
+    padding: 7%;
+    height: 100vh;
+  }
 }
 
 header,
@@ -81,6 +91,11 @@ header {
   align-items: center;
 
   margin: 0 0 2rem;
+
+  @include not-phone {
+    flex: 1 0 0;
+    justify-content: flex-end;
+    padding: 0 1.5rem;
   }
 }
 
@@ -90,10 +105,27 @@ header {
 
   font-weight: bold;
   font-size: 3rem;
+
+  @include not-phone {
+    flex-direction: column;
+    margin: 0;
+    font-size: 1.5rem;
+  }
 }
 
 #name-ko {
   margin-right: 1rem;
+}
+
+.content {
+  @include not-phone {
+    flex: 1 1 70%;
+
+    max-width: 800px;
+    max-height: 100%;
+
+    overflow-y: auto;
+  }
 }
 
 .page {
