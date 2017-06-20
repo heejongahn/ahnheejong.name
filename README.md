@@ -6,7 +6,7 @@
 
 ``` bash
 # install dependencies
-$ npm install # Or yarn install
+$ npm install # Or yarn
 
 # serve with hot reload at localhost:3000
 $ npm run dev
@@ -15,8 +15,9 @@ $ npm run dev
 $ npm run build
 $ npm start
 
-# generate static project
+# deploy to gh-pages (i'll make this into a script one day, i promise)
 $ npm run generate
+$ git add dist/
+$ git commit -m 'wow such deploy wow'
+$ git subtree push --prefix dist origin gh-pages
 ```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
