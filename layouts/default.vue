@@ -3,7 +3,17 @@
     <header>
       <h1 class="name">안희종 ahn heejong</h1>
     </header>
-    <nuxt />
+    <div class="content">
+      <nuxt />
+      <footer>
+        <div class="email">
+          <a href="mailto:heejongahn@gmail.com">heejongahn@gmail.com</a>
+        </div>
+        <div class="twitter">
+          <a href="https://twitter.com/heejongahn">twitter</a>
+        </div>
+      </footer>
+    </div>
   </div>
 </template>
 
