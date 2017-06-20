@@ -97,7 +97,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
 .language-selector {
   font-weight: bold;
   font-size: 1.2rem;
@@ -116,5 +116,4 @@ section {
 .section-content {
   white-space: pre-line;
 }
-
 </style>

@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 /* general */
 body {
   margin: 0;
@@ -31,10 +31,10 @@ h2 {
 a {
   color: black;
   transition: color 0.2s ease;
-}
 
-a:hover {
-  color: red;
+  &:hover {
+    color: red;
+  }
 }
 
 /* layout */
