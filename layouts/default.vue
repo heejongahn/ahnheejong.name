@@ -1,11 +1,14 @@
 <template>
   <div id="root">
     <header>
-      <h1 class="name">안희종 ahn heejong</h1>
+      <div class="name">
+        <span id="name-ko">안희종</span>
+        <span id="name-en">ahn heejong</span>
+      </div>
     </header>
     <div class="content">
-      <nuxt />
-      <footer>
+      <nuxt class="page" />
+      <footer class="footer">
         <div class="email">
           <a href="mailto:heejongahn@gmail.com">heejongahn@gmail.com</a>
         </div>
@@ -37,6 +40,22 @@ a {
   }
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  padding-right: 18px;
+}
+
+li {
+  list-style-type: none;
+
+  &:before {
+    content: '\BB';
+    margin-left: -18px;
+    padding-right: 10px;
+  }
+}
+
 /* layout */
 #root {
   box-sizing: border-box;
@@ -60,10 +79,24 @@ footer {
 header {
   display: flex;
   align-items: center;
+
+  margin: 0 0 2rem;
+  }
 }
 
 .name {
-  margin: 0;
-  margin-right: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+#name-ko {
+  margin-right: 1rem;
+}
+
+.page {
+  margin-bottom: 3rem;
 }
 </style>
