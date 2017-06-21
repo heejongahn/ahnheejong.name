@@ -19,5 +19,6 @@ $ npm start
 $ npm run generate
 $ git add dist/
 $ git commit -m 'wow such deploy wow'
+$ echo ahnheejong.name > dist/CNAME
 $ git subtree push --prefix dist origin gh-pages
 ```
