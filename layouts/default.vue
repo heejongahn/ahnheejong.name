@@ -71,7 +71,7 @@ li {
     flex-direction: row;
     align-items: flex-start;
 
-    padding: 7%;
+    padding: 5%;
     height: 100vh;
   }
 }
@@ -119,9 +119,10 @@ header {
 
 .content {
   @include not-phone {
-    flex: 1 1 70%;
+    padding-left: 2rem;
+    border-left: 1px solid #ced3d6;
 
-    max-width: 800px;
+    flex: 1 1 70%;
     max-height: 100%;
 
     overflow-y: auto;
