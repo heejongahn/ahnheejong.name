@@ -7,6 +7,7 @@
   "dependencies": {
     "node-sass": "^4.5.3",
     "nuxt": "latest",
+    "open-color": "^1.5.1",
     "sass-loader": "^6.0.6"
   },
   "scripts": {
