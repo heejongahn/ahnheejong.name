@@ -30,11 +30,11 @@ import {
   WebGLRenderer,
   PerspectiveCamera,
   Scene,
-  AmbientLight,
+  PointLight,
   FaceColors,
   MeshBasicMaterial,
   Mesh,
-  TetrahedronGeometry
+  OctahedronGeometry
 } from 'three'
 
 function render (el) {
@@ -68,41 +68,39 @@ function render (el) {
 
   container.appendChild(renderer.domElement)
 
-  scene.add(new AmbientLight(0xffffff))
+  const pointLight = new PointLight(0xFFFFFF)
+
+  pointLight.position.x = 300
+  pointLight.position.y = 300
+  pointLight.position.z = -500
+
+  scene.add(pointLight)
 
   const material = new MeshBasicMaterial({
     vertexColors: FaceColors
   })
 
-  const tetrahedron = new Mesh(
-    new TetrahedronGeometry(WIDTH / 3, 0),
+  const octahedron = new Mesh(
+    new OctahedronGeometry(WIDTH / 6, 0),
     material
   )
 
-  const faces = tetrahedron.geometry.faces
-
-  const faceColors = [
-    0x1F8A70,
-    0xBEDB39,
-    0xFFE11A,
-    0xFD7400
-  ]
-
+  const colors = [0xD1DBBD, 0x91AA9D, 0x3E606F, 0x193441]
+  const faces = octahedron.geometry.faces
   faces.map((face, i) => {
-    face.color.setHex(faceColors[i])
+    face.color.setHex(colors[i % 4])
   })
 
-  tetrahedron.position.z = -300
+  octahedron.position.z = -300
 
-  scene.add(tetrahedron)
+  scene.add(octahedron)
 
   function update () {
     const speed = Math.random() / 20
-    tetrahedron.rotation.x += speed
-    tetrahedron.rotation.y += speed
-    tetrahedron.rotation.z += speed
+    octahedron.rotation.x += speed
+    octahedron.rotation.y += speed
+    octahedron.rotation.z += speed
     renderer.render(scene, camera)
-    tetrahedron.colorsNeedUpdate = true
 
     requestAnimationFrame(update)
   }
