@@ -6,9 +6,11 @@
   "private": true,
   "dependencies": {
     "node-sass": "^4.5.3",
-    "nuxt": "latest",
+    "nuxt": "^1.0.0-alpha.4",
     "open-color": "^1.5.1",
-    "sass-loader": "^6.0.6"
+    "sass-loader": "^6.0.6",
+    "three": "^0.86.0",
+    "vue-template-compiler": "^2.3.4"
   },
   "scripts": {
     "dev": "nuxt",
