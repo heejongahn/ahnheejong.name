@@ -32,7 +32,7 @@ import {
   Scene,
   PointLight,
   FaceColors,
-  MeshBasicMaterial,
+  MeshLambertMaterial,
   Mesh,
   OctahedronGeometry
 } from 'three'
@@ -40,6 +40,7 @@ import {
 function render (el) {
   const WIDTH = el.offsetWidth
   const HEIGHT = WIDTH
+  const RADIUS = WIDTH / 6
 
   const VIEW_ANGLE = 20
   const ASPECT = WIDTH / HEIGHT
@@ -68,30 +69,31 @@ function render (el) {
 
   container.appendChild(renderer.domElement)
 
-  const pointLight = new PointLight(0xFFFFFF)
+  const pointLight = new PointLight(0xFFFFFF, 0.5)
 
-  pointLight.position.x = 300
-  pointLight.position.y = 300
-  pointLight.position.z = -500
+  pointLight.position.x = 100
+  pointLight.position.y = 100
+  pointLight.position.z = 30
 
   scene.add(pointLight)
 
-  const material = new MeshBasicMaterial({
+  const material = new MeshLambertMaterial({
     vertexColors: FaceColors
   })
 
   const octahedron = new Mesh(
-    new OctahedronGeometry(WIDTH / 6, 0),
+    new OctahedronGeometry(RADIUS, 0),
     material
   )
 
-  const colors = [0xD1DBBD, 0x91AA9D, 0x3E606F, 0x193441]
+  octahedron.geometry.computeFaceNormals()
+
   const faces = octahedron.geometry.faces
   faces.map((face, i) => {
-    face.color.setHex(colors[i % 4])
+    face.color.setHex(0xFF3030)
   })
 
-  octahedron.position.z = -300
+  octahedron.position.z = -RADIUS * 10
 
   scene.add(octahedron)
 
@@ -101,7 +103,6 @@ function render (el) {
     octahedron.rotation.y += speed
     octahedron.rotation.z += speed
     renderer.render(scene, camera)
-
     requestAnimationFrame(update)
   }
 
