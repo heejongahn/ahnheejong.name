@@ -5,6 +5,7 @@
         <span id="name-ko">안희종</span>
         <span id="name-en">ahn heejong</span>
       </div>
+      <div id="three" />
     </header>
     <div class="content">
       <nuxt class="page" />
@@ -19,7 +20,96 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  mounted: function () {
+    render(this.$el.querySelector('header'))
+  }
+}
+import {
+  WebGLRenderer,
+  PerspectiveCamera,
+  Scene,
+  AmbientLight,
+  FaceColors,
+  MeshBasicMaterial,
+  Mesh,
+  TetrahedronGeometry
+} from 'three'
 
+function render (el) {
+  const WIDTH = el.offsetWidth
+  const HEIGHT = WIDTH
+
+  const VIEW_ANGLE = 20
+  const ASPECT = WIDTH / HEIGHT
+  const NEAR = 0.1
+  const FAR = 10000
+
+  const container =
+      document.querySelector('#three')
+
+  const renderer = new WebGLRenderer({
+    alpha: true,
+    antialias: true
+  })
+
+  const camera = new PerspectiveCamera(
+    VIEW_ANGLE,
+    ASPECT,
+    NEAR,
+    FAR
+  )
+
+  const scene = new Scene()
+
+  scene.add(camera)
+  renderer.setSize(WIDTH, HEIGHT)
+
+  container.appendChild(renderer.domElement)
+
+  scene.add(new AmbientLight(0xffffff))
+
+  const material = new MeshBasicMaterial({
+    vertexColors: FaceColors
+  })
+
+  const tetrahedron = new Mesh(
+    new TetrahedronGeometry(WIDTH / 3, 0),
+    material
+  )
+
+  const faces = tetrahedron.geometry.faces
+
+  const faceColors = [
+    0x1F8A70,
+    0xBEDB39,
+    0xFFE11A,
+    0xFD7400
+  ]
+
+  faces.map((face, i) => {
+    face.color.setHex(faceColors[i])
+  })
+
+  tetrahedron.position.z = -300
+
+  scene.add(tetrahedron)
+
+  function update () {
+    const speed = Math.random() / 20
+    tetrahedron.rotation.x += speed
+    tetrahedron.rotation.y += speed
+    tetrahedron.rotation.z += speed
+    renderer.render(scene, camera)
+    tetrahedron.colorsNeedUpdate = true
+
+    requestAnimationFrame(update)
+  }
+
+  requestAnimationFrame(update)
+}
+</script>
 <style lang="scss">
 @import '~assets/media-query';
 
@@ -94,8 +184,17 @@ header {
 
   @include not-phone {
     flex: 1 0 0;
+    flex-direction: column;
     justify-content: flex-end;
     padding: 0 1.5rem;
+  }
+}
+
+#three {
+  display: none;
+
+  @include not-phone {
+    display: block;
   }
 }
 
