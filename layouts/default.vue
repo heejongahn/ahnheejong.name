@@ -38,7 +38,9 @@ import {
 } from 'three'
 
 function render (el) {
-  const WIDTH = el.offsetWidth
+  const WIDTH = window.innerWidth >= 768
+    ? el.offsetWidth
+    : 100
   const HEIGHT = WIDTH
   const RADIUS = WIDTH / 6
 
@@ -111,52 +113,20 @@ function render (el) {
 </script>
 <style lang="scss">
 @import '~assets/media-query';
-
-/* general */
-body {
-  margin: 0;
-  font-family: "Spoqa Han Sans", "spoqahansans", "Apple SD Gothic Neo", "Nanum Barun Gothic", "Nanum Gothic", Verdana, Arial, "Malgun Gothic", Dotum, sans-serif;
-}
-
-h2 {
-  margin-bottom: 1rem;
-}
-
-a {
-  color: black;
-  transition: color 0.2s ease;
-
-  &:hover {
-    color: red;
-  }
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  padding-left: 18px;
-}
-
-li {
-  list-style-type: none;
-
-  &:before {
-    content: '\BB';
-    margin-left: -18px;
-    padding-right: 10px;
-  }
-}
+@import '~assets/style';
 
 /* layout */
 #root {
   box-sizing: border-box;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem;
 
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 
   @include not-phone {
+    padding: 1.5rem 3rem;
+
     flex-direction: row;
     align-items: flex-start;
 
@@ -178,6 +148,7 @@ footer {
 header {
   display: flex;
   align-items: center;
+  position: relative;
 
   margin: 0 0 2rem;
 
@@ -190,9 +161,12 @@ header {
 }
 
 #three {
-  display: none;
+  position: absolute;
+  top: -10px;
+  right: 0;
 
   @include not-phone {
+    position: static;
     display: block;
   }
 }

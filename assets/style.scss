@@ -1,0 +1,41 @@
+@import '~open-color/open-color.scss';
+
+/* general */
+body {
+  margin: 0;
+  font-family: "Spoqa Han Sans", "spoqahansans", "Apple SD Gothic Neo", "Nanum Barun Gothic", "Nanum Gothic", Verdana, Arial, "Malgun Gothic", Dotum, sans-serif;
+}
+
+body, a, div, span, p, li, h1, h2, h3, h4, h5, h6 {
+  color: $oc-gray-8;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: black;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: red;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 18px;
+}
+
+li {
+  list-style-type: none;
+
+  &:before {
+    content: '\BB';
+    margin-left: -18px;
+    padding-right: 10px;
+  }
+}
+
