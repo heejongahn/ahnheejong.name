@@ -31,7 +31,6 @@ import {
   PerspectiveCamera,
   Scene,
   PointLight,
-  FaceColors,
   MeshLambertMaterial,
   Mesh,
   OctahedronGeometry
@@ -80,20 +79,13 @@ function render (el) {
   scene.add(pointLight)
 
   const material = new MeshLambertMaterial({
-    vertexColors: FaceColors
+    color: 0xff3030
   })
 
   const octahedron = new Mesh(
     new OctahedronGeometry(RADIUS, 0),
     material
   )
-
-  octahedron.geometry.computeFaceNormals()
-
-  const faces = octahedron.geometry.faces
-  faces.map((face, i) => {
-    face.color.setHex(0xFF3030)
-  })
 
   octahedron.position.z = -RADIUS * 10
 
