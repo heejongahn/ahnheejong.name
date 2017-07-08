@@ -5,6 +5,7 @@
   "author": "Heejong Ahn <heejongahn@gmail.com>",
   "private": true,
   "dependencies": {
+    "mz": "^2.6.0",
     "node-sass": "^4.5.3",
     "nuxt": "^1.0.0-alpha.4",
     "open-color": "^1.5.1",
