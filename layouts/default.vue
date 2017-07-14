@@ -105,7 +105,6 @@ function render (el) {
 </script>
 <style lang="scss">
 @import '~assets/media-query';
-@import '~assets/style';
 
 /* layout */
 #root {
