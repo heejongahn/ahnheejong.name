@@ -101,7 +101,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '~assets/media-query';
+
 .language-selector {
+  cursor: pointer;
   font-weight: bold;
   font-size: 1.2rem;
   margin-right: 0.5rem;
@@ -112,7 +115,15 @@ export default {
 }
 
 .section-content {
-  white-space: pre-line;
+  word-break: keep-all;
   line-height: 1.8;
+
+  ul {
+    margin-top: 1em;
+  }
+
+  @include not-phone {
+    white-space: pre-line;
+  }
 }
 </style>

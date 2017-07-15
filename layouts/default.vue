@@ -2,8 +2,8 @@
   <div id="root">
     <header>
       <div class="name">
-        <span id="name-ko">안희종</span>
-        <span id="name-en">ahn heejong</span>
+        ahn
+        heejong
       </div>
       <div id="three" />
     </header>
@@ -42,9 +42,7 @@ import {
 } from 'three'
 
 function render (el) {
-  const WIDTH = window.innerWidth >= 768
-    ? el.offsetWidth
-    : 100
+  const WIDTH = 200
   const HEIGHT = WIDTH
   const RADIUS = WIDTH / 6
 
@@ -114,20 +112,18 @@ function render (el) {
 /* layout */
 #root {
   box-sizing: border-box;
-  padding: 1.5rem;
+  padding: 0;
 
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 
   @include not-phone {
-    padding: 1.5rem 3rem;
-
     flex-direction: row;
     align-items: flex-start;
 
-    padding: 5%;
     height: 100vh;
+    overflow-y: hidden;
   }
 }
 
@@ -146,54 +142,50 @@ header {
   align-items: center;
   position: relative;
 
-  margin: 0 0 2rem;
+  padding: 2em;
+  padding: 2em 1em 1em;
 
   @include not-phone {
-    flex: 1 0 0;
+    padding: 5%;
+
+    flex: 0 0 200px;
     flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 1.5rem;
+    align-content: flex-end;
+
+    padding-bottom: 1rem;
   }
 }
 
 #three {
-  position: absolute;
-  top: -10px;
-  right: 0;
+  display: none;
 
   @include not-phone {
-    position: static;
     display: block;
   }
 }
 
 .name {
-  display: flex;
-  flex-wrap: wrap;
-
   font-weight: bold;
   font-size: 3rem;
+  line-height: 1;
 
   @include not-phone {
-    flex-direction: column;
+    white-space: pre-line;
     margin: 0;
-    font-size: 1.5rem;
   }
 }
 
-#name-ko {
-  margin-right: 1rem;
-}
-
 .content {
+  padding: 2em;
+  padding-top: 1em;
+
   @include not-phone {
-    padding-left: 2rem;
-    border-left: 1px solid #ced3d6;
+    padding: 5%;
 
     flex: 1 1 70%;
-    max-height: 100%;
 
     overflow-y: auto;
+    height: 90%;
   }
 }
 
