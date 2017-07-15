@@ -16,6 +16,11 @@
         <div class="twitter">
           <a href="https://twitter.com/heejongahn">twitter</a>
         </div>
+        <small>
+          this site is powered by
+          <a href="https://nuxtjs.org/">Nuxt.js</a>,
+          <a href="https://pages.github.com/">Github Pages</a> and 🍺
+        </small>
       </footer>
     </div>
   </div>
