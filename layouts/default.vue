@@ -1,10 +1,20 @@
 <template>
   <div id="root">
     <header>
-      <div class="name">
-        ahn
+      <nuxt-link to="/" class="name">ahn
         heejong
-      </div>
+      </nuxt-link>
+      <nav class="nav">
+        <nuxt-link to="/" class="navLink">
+          <span class="navEmoji">🏡</span>home
+        </nuxt-link>
+        <nuxt-link to="/articles/" class="navLink">
+          <span class="navEmoji">📝</span>articles
+        </nuxt-link>
+        <span class="navLink disabled">
+          <span class="navEmoji">🚧</span>palette
+        </span>
+      </nav>
       <div id="three" />
     </header>
     <div class="content">
@@ -107,6 +117,7 @@ function render (el) {
 }
 </script>
 <style lang="scss">
+@import '~open-color/open-color.scss';
 @import '~assets/media-query';
 
 /* layout */
@@ -139,17 +150,16 @@ footer {
 /* header */
 header {
   display: flex;
+  flex-direction: column;
   align-items: center;
   position: relative;
 
-  padding: 2em;
   padding: 2em 1em 1em;
 
   @include not-phone {
     padding: 5%;
 
     flex: 0 0 200px;
-    flex-direction: column;
     align-content: flex-end;
 
     padding-bottom: 1rem;
@@ -164,10 +174,37 @@ header {
   }
 }
 
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  margin-top: 2em;
+
+  @include not-phone {
+    display: block;
+  }
+}
+
+.reset-anchor-style {
+  text-decoration: none;
+
+  &:active,
+  &:focus {
+    color: $oc-gray-8;
+  }
+}
+
 .name {
+  @extend .reset-anchor-style;
+
   font-weight: bold;
   font-size: 3rem;
   line-height: 1;
+
+  &:hover {
+    color: $oc-gray-8;
+  }
 
   @include not-phone {
     white-space: pre-line;
@@ -175,9 +212,24 @@ header {
   }
 }
 
+.navLink {
+  @extend .reset-anchor-style;
+
+  display: block;
+
+  &.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    color: $oc-gray-6;
+  }
+}
+
+.navEmoji {
+  margin-right: 12px;
+}
+
 .content {
-  padding: 2em;
-  padding-top: 1em;
+  padding: 1em;
 
   @include not-phone {
     padding: 5%;
@@ -191,5 +243,13 @@ header {
 
 .page {
   margin-bottom: 3rem;
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
 }
 </style>
