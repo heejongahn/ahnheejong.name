@@ -30,6 +30,7 @@ export default {
 .markdown{
   p,
   li {
+    word-break: keep-all;
     line-height: 1.8;
   }
 

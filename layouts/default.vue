@@ -5,14 +5,14 @@
         heejong
       </nuxt-link>
       <nav class="nav">
-        <nuxt-link to="/" class="navLink">
-          <span class="navEmoji">🏡</span>home
+        <nuxt-link to="/" class="navLink" exact-active-class="active">
+          <span class="navEmoji">🏡</span><span class="navLabel">home</span>
         </nuxt-link>
-        <nuxt-link to="/articles/" class="navLink">
-          <span class="navEmoji">📝</span>articles
+        <nuxt-link to="/articles/" class="navLink" active-class="active">
+          <span class="navEmoji">📝</span><span class="navLabel">articles</span>
         </nuxt-link>
         <span class="navLink disabled">
-          <span class="navEmoji">🚧</span>palette
+          <span class="navEmoji">🎨</span><span class="navLabel">palette</span>
         </span>
       </nav>
       <div id="three" />
@@ -151,16 +151,17 @@ footer {
 header {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
 
   padding: 2em 1em 1em;
 
   @include not-phone {
     padding: 5%;
+    padding-right: 2%;
+    align-items: center;
 
     flex: 0 0 200px;
-    align-content: flex-end;
 
     padding-bottom: 1rem;
   }
@@ -177,6 +178,7 @@ header {
 .nav {
   display: flex;
   width: 100%;
+  max-width: 400px;
   justify-content: space-between;
 
   margin-top: 2em;
@@ -216,11 +218,19 @@ header {
   @extend .reset-anchor-style;
 
   display: block;
+  line-height: 1;
+
+  &.active {
+    font-weight: bold;
+  }
 
   &.disabled {
     pointer-events: none;
     cursor: not-allowed;
-    color: $oc-gray-6;
+
+    > .navLabel {
+      color: $oc-gray-6;
+    }
   }
 }
 
