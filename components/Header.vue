@@ -213,6 +213,7 @@ header {
   margin-bottom: 20px;
 
   @include not-phone {
+    pointer-events: initial;
     transform: none;
 
     justify-content: flex-start;
