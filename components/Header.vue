@@ -167,7 +167,6 @@ header {
 
   margin-top: 10px;
 
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
 
@@ -183,12 +182,16 @@ header {
 .navLink {
   @extend %reset-anchor-style;
   @extend %nav-link-base;
-  transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  display: flex;
+  transition: transform,opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  opacity: 0;
+  pointer-events: none;
+  animation-fill-mode: forwards;
 
   opacity: 0;
   transform: translateY(10px);
 
-  display: flex;
   justify-content: center;
   align-items: center;
 
@@ -213,16 +216,52 @@ header {
   }
 }
 
+@mixin popup($i) {
+  $start: 0% + 15 * $i;
+  $end: 50% + 15 * $i;
+
+  @keyframes popup#{$i} {
+    0% {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    #{$start} {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    #{$end} {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
 .nav.visible {
+  display: flex;
+
   .navLink {
-    transform: translateY(0);
     opacity: initial;
+    pointer-events: initial;
+  }
+
+  @for $i from 0 to 3 {
+    @include popup($i);
+    .navLink:nth-child(#{$i + 1}) {
+      animation-name: popup#{$i};
+      animation-duration: 1s;
+    }
   }
 
   .disabled {
     pointer-events: none;
     cursor: not-allowed;
-    opacity: 0.6;
   }
 }
 
