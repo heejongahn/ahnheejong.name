@@ -103,11 +103,11 @@ header {
     flex-direction: column;
     align-items: flex-start;
 
-    padding: 5%;
-    padding-right: 2%;
-    align-items: center;
+    padding: 5% 24px 5% 48px;
 
-    flex: 0 0 200px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 272px;
 
     padding-bottom: 1rem;
   }
