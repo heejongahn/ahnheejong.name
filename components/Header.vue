@@ -12,10 +12,10 @@
     </div>
     <nav :class="navCollapsed ? 'nav' : 'nav visible'">
       <nuxt-link to="/" class="navLink" exact-active-class="active">
-        <span class="navEmoji">🏡</span><span class="navLabel">home</span>
+        <span @click="navCollapse()" class="navEmoji">🏡</span><span class="navLabel">home</span>
       </nuxt-link>
       <nuxt-link to="/articles/" class="navLink" active-class="active">
-        <span class="navEmoji">📝</span><span class="navLabel">articles</span>
+        <span @click="navCollapse()" class="navEmoji">📝</span><span class="navLabel">articles</span>
       </nuxt-link>
       <span class="navLink disabled">
         <span class="navEmoji">🎨</span><span class="navLabel">palette</span>
@@ -35,6 +35,9 @@ export default {
   methods: {
     navToggleClicked: function () {
       this.navCollapsed = !this.navCollapsed
+    },
+    navCollapse: function () {
+      this.navCollapsed = true
     }
   }
 }
@@ -50,8 +53,12 @@ $nav-link-size: 40px;
 %nav-link-base {
   width: $nav-link-size;
   height: $nav-link-size;
-  border: 1px solid black;
   border-radius: 20px;
+  background-color: rgba($oc-gray-0, 0.9);
+
+  @include not-phone {
+    background: none;
+  }
 }
 
 %reset-anchor-style {
@@ -73,7 +80,7 @@ header {
   align-items: center;
   justify-content: space-between;
 
-  background-color: white;
+  background-color: rgba(white, 0.8);
 
   height: $header-height;
   padding: 0 1em;
@@ -116,7 +123,7 @@ header {
 .navToggle {
   @extend %nav-link-base;
 
-  padding: 10px 10px;
+  padding: 11px;
 
   display: flex;
   flex-direction: column;
@@ -158,19 +165,14 @@ header {
   top: $header-height;
   right: 1em;
 
+  margin-top: 10px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  visibility: hidden;
-
-  &.visible {
-    visibility: initial;
-  }
-
   @include not-phone {
     position: initial;
-    visibility: initial;
 
     display: block;
 
@@ -181,6 +183,10 @@ header {
 .navLink {
   @extend %reset-anchor-style;
   @extend %nav-link-base;
+  transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  opacity: 0;
+  transform: translateY(10px);
 
   display: flex;
   justify-content: center;
@@ -190,10 +196,13 @@ header {
 
   font-size: 1.5em;
 
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 
   @include not-phone {
+    transform: none;
+
     justify-content: flex-start;
+    opacity: initial;
 
     width: auto;
     height: auto;
@@ -204,18 +213,22 @@ header {
   }
 }
 
+.nav.visible {
+  .navLink {
+    transform: translateY(0);
+    opacity: initial;
+  }
+
+  .disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
 .navLink {
   &.active {
     font-weight: bold;
-  }
-
-  &.disabled {
-    pointer-events: none;
-    cursor: not-allowed;
-
-    > .navLabel {
-      color: $oc-gray-6;
-    }
   }
 }
 
