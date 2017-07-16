@@ -1,0 +1,10 @@
+@import '~open-color/open-color.scss';
+
+%reset-anchor-style {
+  text-decoration: none;
+
+  &:active,
+  &:focus {
+    color: $oc-gray-8;
+  }
+}

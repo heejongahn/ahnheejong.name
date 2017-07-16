@@ -108,17 +108,9 @@ function render (el) {
 <style lang="scss">
 @import '~open-color/open-color.scss';
 @import '~assets/media-query';
+@import '~assets/placeholders';
 
 $header-height: 60px;
-
-%reset-anchor-style {
-  text-decoration: none;
-
-  &:active,
-  &:focus {
-    color: $oc-gray-8;
-  }
-}
 
 /* layout */
 #root {

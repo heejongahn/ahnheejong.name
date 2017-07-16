@@ -57,6 +57,7 @@ export default {
 <style scoped lang="scss">
 @import '~open-color/open-color.scss';
 @import '~assets/media-query';
+@import '~assets/placeholders';
 
 $header-height: 60px;
 $nav-link-size: 40px;
@@ -69,15 +70,6 @@ $nav-link-size: 40px;
 
   @include not-phone {
     background: none;
-  }
-}
-
-%reset-anchor-style {
-  text-decoration: none;
-
-  &:active,
-  &:focus {
-    color: $oc-gray-8;
   }
 }
 
