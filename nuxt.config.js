@@ -1,3 +1,6 @@
+const axios = require('axios')
+const S3_BASE_PATH = 'https://s3.ap-northeast-2.amazonaws.com/ahnheejong.name-articles'
+
 module.exports = {
   /*
   ** Headers of the page
@@ -23,6 +26,20 @@ module.exports = {
   /*
   ** Build configuration
   */
+  generate: {
+    routes: function () {
+      return axios(`${S3_BASE_PATH}/index.json`, { responseType: 'json' })
+      .then(r => {
+        return r.data.map(article => {
+          const route = {
+            route: `/articles/${article.slug}`,
+            payload: article
+          }
+          return route
+        })
+      })
+    }
+  },
   build: {
     /*
     ** Run ESLINT on save
