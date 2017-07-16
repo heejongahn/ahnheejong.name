@@ -4,6 +4,11 @@
       <nuxt-link to="/" class="name">ahn
         heejong
       </nuxt-link>
+      <div class="navToggle">
+        <div class="navToggleBar"></div>
+        <div class="navToggleBar"></div>
+        <div class="navToggleBar"></div>
+      </div>
       <nav class="nav">
         <nuxt-link to="/" class="navLink" exact-active-class="active">
           <span class="navEmoji">🏡</span><span class="navLabel">home</span>
@@ -120,9 +125,27 @@ function render (el) {
 @import '~open-color/open-color.scss';
 @import '~assets/media-query';
 
+$header-height: 60px;
+$nav-link-size: 40px;
+
+%reset-anchor-style {
+  text-decoration: none;
+
+  &:active,
+  &:focus {
+    color: $oc-gray-8;
+  }
+}
+
+%nav-link-base {
+  width: $nav-link-size;
+  height: $nav-link-size;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
 /* layout */
 #root {
-  box-sizing: border-box;
   padding: 0;
 
   display: flex;
@@ -149,14 +172,27 @@ footer {
 
 /* header */
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 
-  padding: 2em 1em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: white;
+
+  height: $header-height;
+  padding: 0 1em;
 
   @include not-phone {
+    position: initial;
+
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+
     padding: 5%;
     padding-right: 2%;
     align-items: center;
@@ -175,33 +211,69 @@ header {
   }
 }
 
-.nav {
-  display: flex;
-  width: 100%;
-  max-width: 400px;
-  justify-content: space-between;
+.navToggle {
+  @extend %nav-link-base;
 
-  margin-top: 2em;
+  padding: 10px 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 
   @include not-phone {
-    display: block;
+    display: none;
   }
 }
 
-.reset-anchor-style {
-  text-decoration: none;
+.navToggleBar {
+  width: 100%;
+  height: 2px;
+  border-top: 2px solid $oc-gray-8;
 
-  &:active,
-  &:focus {
-    color: $oc-gray-8;
+  transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transform-origin: center;
+}
+
+.navToggle.active {
+  > .navToggleBar {
+    :first-child {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    :last-child {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    :nth-child(2) {
+      opacity: 0;
+    }
+  }
+}
+
+.nav {
+  position: absolute;
+  top: $header-height;
+  right: 1em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include not-phone {
+    position: initial;
+
+    display: block;
+
+    margin-top: 2em;
   }
 }
 
 .name {
-  @extend .reset-anchor-style;
+  @extend %reset-anchor-style;
 
+  font-size: 1.5rem;
   font-weight: bold;
-  font-size: 3rem;
   line-height: 1;
 
   &:hover {
@@ -209,17 +281,39 @@ header {
   }
 
   @include not-phone {
+    font-size: 3rem;
     white-space: pre-line;
     margin: 0;
   }
 }
 
 .navLink {
-  @extend .reset-anchor-style;
+  @extend %reset-anchor-style;
+  @extend %nav-link-base;
 
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   line-height: 1;
 
+  font-size: 1.5em;
+
+  margin-bottom: 10px;
+
+  @include not-phone {
+    justify-content: flex-start;
+
+    width: auto;
+    height: auto;
+
+    font-size: 1em;
+
+    border: none;
+  }
+}
+
+.navLink {
   &.active {
     font-weight: bold;
   }
@@ -234,12 +328,18 @@ header {
   }
 }
 
-.navEmoji {
-  margin-right: 12px;
+.navLabel {
+  display: none;
+  margin-left: 12px;
+
+  @include not-phone {
+    display: block;
+  }
 }
 
 .content {
   padding: 1em;
+  padding-top: $header-height;
 
   @include not-phone {
     padding: 5%;
