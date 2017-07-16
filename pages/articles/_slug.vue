@@ -29,7 +29,8 @@ export default {
   },
   mounted () {
     const { articles } = this.$store.state
-    if (articles) {
+
+    if (articles[this.slug] != null) {
       this.meta = articles[this.slug]
     }
   },
