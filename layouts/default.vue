@@ -147,20 +147,27 @@ footer {
 }
 
 .content {
+  flex-grow: 1;
+
   padding: 1em;
-  padding-top: $header-height;
+  margin-top: $header-height;
+
+  display: flex;
+  flex-direction: column;
 
   @include not-phone {
     padding: 5%;
+    margin-top: 0;
 
     flex: 1 1 70%;
 
     overflow-y: auto;
-    height: 90%;
+    height: 100%;
   }
 }
 
 .page {
+  flex-grow: 1;
   margin-bottom: 3rem;
 
   > :first-child {
