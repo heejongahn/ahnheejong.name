@@ -1,6 +1,11 @@
 <template>
   <section class="container">
-    <div :class="$style.markdown" v-if="body != null" v-html="compiledArticle"></div>
+    <div v-if="body != null">
+      <h1 :class="$style.title">{{meta.title}}</h1>
+      <div :class="$style.date">{{meta.date}}</div>
+      <hr>
+      <div :class="$style.markdown" v-html="compiledArticle"></div>
+    </div>
     <div v-else>로딩 중..</div>
   </section>
 </template>
@@ -13,10 +18,10 @@ const S3_BASE_PATH = 'https://s3.ap-northeast-2.amazonaws.com/ahnheejong.name-ar
 
 export default {
   async asyncData (context) {
-    const { params } = context
+    const { params, payload } = context
     const r = await axios(`${S3_BASE_PATH}/${params.slug}/article.md`)
 
-    return { body: r.data }
+    return { body: r.data, meta: payload }
   },
   computed: {
     compiledArticle: function () {
