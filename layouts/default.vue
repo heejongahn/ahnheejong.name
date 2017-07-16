@@ -161,6 +161,7 @@ footer {
 .page {
   flex-grow: 1;
   margin-bottom: 3rem;
+  max-width: 800px;
 
   > :first-child {
     margin-top: 0;
