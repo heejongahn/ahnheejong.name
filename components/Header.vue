@@ -38,7 +38,18 @@ export default {
     },
     navCollapse: function () {
       this.navCollapsed = true
+    },
+    closeHandler: function (e) {
+      if (!this.$el.contains(e.target)) {
+        this.navCollapsed = true
+      }
     }
+  },
+  mounted () {
+    window.addEventListener('click', this.closeHandler)
+  },
+  beforeDestroy () {
+    window.removeEventListener('click', this.closeHandler)
   }
 }
 </script>
