@@ -1,0 +1,239 @@
+<<template>
+  <header>
+    <nuxt-link to="/" class="name">ahn
+      heejong
+    </nuxt-link>
+    <div
+      @click="navToggleClicked()"
+      :class="navCollapsed ? 'navToggle' : 'navToggle opened'">
+      <div class="navToggleBar"></div>
+      <div class="navToggleBar"></div>
+      <div class="navToggleBar"></div>
+    </div>
+    <nav :class="navCollapsed ? 'nav' : 'nav visible'">
+      <nuxt-link to="/" class="navLink" exact-active-class="active">
+        <span class="navEmoji">🏡</span><span class="navLabel">home</span>
+      </nuxt-link>
+      <nuxt-link to="/articles/" class="navLink" active-class="active">
+        <span class="navEmoji">📝</span><span class="navLabel">articles</span>
+      </nuxt-link>
+      <span class="navLink disabled">
+        <span class="navEmoji">🎨</span><span class="navLabel">palette</span>
+      </span>
+    </nav>
+    <div id="three" />
+  </header>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      navCollapsed: true
+    }
+  },
+  methods: {
+    navToggleClicked: function () {
+      this.navCollapsed = !this.navCollapsed
+    }
+  }
+}
+</script>
+
+<style scoped lang="scss">
+@import '~open-color/open-color.scss';
+@import '~assets/media-query';
+
+$header-height: 60px;
+$nav-link-size: 40px;
+
+%nav-link-base {
+  width: $nav-link-size;
+  height: $nav-link-size;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+%reset-anchor-style {
+  text-decoration: none;
+
+  &:active,
+  &:focus {
+    color: $oc-gray-8;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: white;
+
+  height: $header-height;
+  padding: 0 1em;
+
+  @include not-phone {
+    position: initial;
+
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 5%;
+    padding-right: 2%;
+    align-items: center;
+
+    flex: 0 0 200px;
+
+    padding-bottom: 1rem;
+  }
+}
+
+.name {
+  @extend %reset-anchor-style;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1;
+
+  &:hover {
+    color: $oc-gray-8;
+  }
+
+  @include not-phone {
+    font-size: 3rem;
+    white-space: pre-line;
+    margin: 0;
+  }
+}
+
+.navToggle {
+  @extend %nav-link-base;
+
+  padding: 10px 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  @include not-phone {
+    display: none;
+  }
+}
+
+.navToggleBar {
+  width: 100%;
+  height: 2px;
+  border-top: 2px solid $oc-gray-8;
+
+  transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transform-origin: center;
+}
+
+.navToggle.opened {
+  .navToggleBar {
+    &:first-child {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    &:last-child {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+  }
+}
+
+.nav {
+  position: absolute;
+  top: $header-height;
+  right: 1em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  visibility: hidden;
+
+  &.visible {
+    visibility: initial;
+  }
+
+  @include not-phone {
+    position: initial;
+    visibility: initial;
+
+    display: block;
+
+    margin-top: 2em;
+  }
+}
+
+.navLink {
+  @extend %reset-anchor-style;
+  @extend %nav-link-base;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  line-height: 1;
+
+  font-size: 1.5em;
+
+  margin-bottom: 10px;
+
+  @include not-phone {
+    justify-content: flex-start;
+
+    width: auto;
+    height: auto;
+
+    font-size: 1em;
+
+    border: none;
+  }
+}
+
+.navLink {
+  &.active {
+    font-weight: bold;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+
+    > .navLabel {
+      color: $oc-gray-6;
+    }
+  }
+}
+
+.navLabel {
+  display: none;
+  margin-left: 12px;
+
+  @include not-phone {
+    display: block;
+  }
+}
+
+#three {
+  display: none;
+
+  @include not-phone {
+    display: block;
+  }
+}
+
+</style>
