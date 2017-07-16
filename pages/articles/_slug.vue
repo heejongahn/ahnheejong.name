@@ -67,6 +67,7 @@ export default {
 
 .tag {
   font-size: 0.75em;
+  letter-spacing: 1px;
 
   padding: 4px;
   border-radius: 6px;

@@ -1,11 +1,12 @@
 <template>
   <section class="container">
-    <h1>글</h1>
-    <div :key="article.slug" v-for="article in articles">
-      <nuxt-link :to="`/articles/${article.slug}`">
-        <h2>{{article.title}}</h2>
-      </nuxt-link>
-    </div>
+    <nuxt-link :key="article.slug" v-for="article in articles" :class="$style.article" :to="`/articles/${article.slug}`">
+      <h2 :class="$style.title">{{article.title}}</h2>
+      <div :class="$style.date">{{article.date}}</div>
+      <div :class="$style.tags">
+        <div :key="tag" v-for="tag in article.tags" :class="$style.tag">{{tag}}</div>
+      </div>
+    </nuxt-link>
   </section>
 </template>
 
@@ -32,5 +33,46 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
+@import '~assets/media-query';
+@import '~assets/placeholders';
+
+.article {
+  @extend %reset-anchor-style;
+  display: block;
+  transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  padding: 12px;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+
+  @include not-phone {
+  }
+}
+
+.title {
+  margin-top: 0;
+}
+
+.date {
+  font-size: 14px;
+}
+
+.tags {
+  display: flex;
+  margin-top: 12px;
+}
+
+.tag {
+  font-size: 0.75em;
+  letter-spacing: 1px;
+  padding: 4px;
+  border-radius: 6px;
+  background-color: rgba(#000000, 0.1);
+  margin-right: 8px;
+}
+
 </style>
