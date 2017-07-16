@@ -220,9 +220,14 @@ header {
   }
 }
 
-@mixin popup($i) {
+@mixin popup($i, $disabled: false) {
   $start: 0% + 15 * $i;
   $end: 50% + 15 * $i;
+
+  $target-opacity: 1;
+  @if $disabled == true {
+    $target-opacity: 0.5;
+  }
 
   @keyframes popup#{$i} {
     0% {
@@ -237,12 +242,12 @@ header {
 
     #{$end} {
       transform: translateY(0);
-      opacity: 1;
+      opacity: $target-opacity;
     }
 
     100% {
       transform: translateY(0);
-      opacity: 1;
+      opacity: $target-opacity;
     }
   }
 }
@@ -257,6 +262,11 @@ header {
 
   @for $i from 0 to 3 {
     @include popup($i);
+
+    @if ($i == 2) {
+      @include popup($i, true);
+    }
+
     .navLink:nth-child(#{$i + 1}) {
       animation-name: popup#{$i};
       animation-duration: 1s;
@@ -272,6 +282,12 @@ header {
 .navLink {
   &.active {
     font-weight: bold;
+  }
+
+  @include not-phone {
+    &.disabled {
+      opacity: 0.5;
+    }
   }
 }
 
