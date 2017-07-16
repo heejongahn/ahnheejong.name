@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <div v-if="body != null">
+    <div v-if="meta != null && body != null">
       <div :class="$style.meta">
         <h1 :class="$style.title">{{meta.title}}</h1>
         <div :class="$style.date">{{meta.date}}</div>
@@ -22,17 +22,16 @@ const S3_BASE_PATH = 'https://s3.ap-northeast-2.amazonaws.com/ahnheejong.name-ar
 
 export default {
   async asyncData (context) {
-    const { params } = context
+    const { params, payload } = context
     const r = await axios(`${S3_BASE_PATH}/${params.slug}/article.md`)
-    const meta =
-      {
-        'slug': 'my-first-octahedron',
-        'title': '나의 버건디 팔면체 : Three.js를 사용한 3D 그래픽스 입문기',
-        'date': '2017-07-10',
-        'tags': ['three.js', '그래픽스', '자바스크립트']
-      }
 
-    return { body: r.data, meta }
+    return { slug: params.slug, body: r.data, meta: payload }
+  },
+  mounted () {
+    const { articles } = this.$store.state
+    if (articles) {
+      this.meta = articles[this.slug]
+    }
   },
   computed: {
     compiledArticle: function () {

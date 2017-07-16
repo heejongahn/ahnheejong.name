@@ -18,6 +18,16 @@ export default {
   async asyncData () {
     const r = await axios(`${S3_BASE_PATH}/index.json`, { responseType: 'json' })
     return { articles: r.data }
+  },
+  mounted () {
+    const { articles } = this
+    const storeArticles = {}
+
+    articles.forEach(article => {
+      storeArticles[article.slug] = article
+    })
+
+    this.$store.commit('setArticles', storeArticles)
   }
 }
 </script>
