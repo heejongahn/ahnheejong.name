@@ -1,9 +1,13 @@
 <template>
   <section class="container">
     <div v-if="body != null">
-      <h1 :class="$style.title">{{meta.title}}</h1>
-      <div :class="$style.date">{{meta.date}}</div>
-      <hr>
+      <div :class="$style.meta">
+        <h1 :class="$style.title">{{meta.title}}</h1>
+        <div :class="$style.date">{{meta.date}}</div>
+        <div :class="$style.tags">
+          <div :key="tag" :class="$style.tag" v-for="tag in meta.tags">{{tag}}</div>
+        </div>
+      </div>
       <div :class="$style.markdown" v-html="compiledArticle"></div>
     </div>
     <div v-else>로딩 중..</div>
@@ -18,10 +22,17 @@ const S3_BASE_PATH = 'https://s3.ap-northeast-2.amazonaws.com/ahnheejong.name-ar
 
 export default {
   async asyncData (context) {
-    const { params, payload } = context
+    const { params } = context
     const r = await axios(`${S3_BASE_PATH}/${params.slug}/article.md`)
+    const meta =
+      {
+        'slug': 'my-first-octahedron',
+        'title': '나의 버건디 팔면체 : Three.js를 사용한 3D 그래픽스 입문기',
+        'date': '2017-07-10',
+        'tags': ['three.js', '그래픽스', '자바스크립트']
+      }
 
-    return { body: r.data, meta: payload }
+    return { body: r.data, meta }
   },
   computed: {
     compiledArticle: function () {
@@ -32,7 +43,33 @@ export default {
 </script>
 
 <style module lang="scss">
+.title {
+  margin: 0;
+  font-size: 4em;
+  word-break: keep-all;
+}
+
+.date {
+  margin-top: 1em;
+}
+
+.tags {
+  display: flex;
+  margin-top: 1em;
+}
+
+.tag {
+  font-size: 0.75em;
+
+  padding: 4px;
+  border-radius: 6px;
+  background-color: rgba(#000000, 0.1);
+  margin-right: 8px;
+}
+
 .markdown{
+  margin-top: 3em;
+
   p,
   li {
     word-break: keep-all;
