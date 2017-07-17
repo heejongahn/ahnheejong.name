@@ -47,9 +47,11 @@ export default {
   },
   mounted () {
     window.addEventListener('click', this.closeHandler)
+    window.addEventListener('touchend', this.closeHandler)
   },
   beforeDestroy () {
     window.removeEventListener('click', this.closeHandler)
+    window.removeEventListener('touchend', this.closeHandler)
   }
 }
 </script>
