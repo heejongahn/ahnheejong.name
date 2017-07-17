@@ -1,6 +1,22 @@
 const axios = require('axios')
 const S3_BASE_PATH = 'https://s3.ap-northeast-2.amazonaws.com/ahnheejong.name-articles'
 
+const title = 'ahn [at] 🇰🇷'
+const url = 'http://ahnheejong.name'
+
+const meta = {
+  'og:locale': 'ko_kR',
+  'og:site_name': 'ahj [at] 🇰🇷',
+  'og:title': title,
+  'og:url': url,
+  'twitter:site': '@heejongahn',
+  'twitter:title': title,
+  'twitter:description': '👋',
+  'twitter:url': url,
+  'twitter:card': 'summary',
+  'twitter:creator': 'ahn heejong'
+}
+
 module.exports = {
   /*
   ** Headers of the page
@@ -10,7 +26,12 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'about [dot] ahj [at] 🇰🇷' }
+      { hid: 'description', name: 'description', content: '👋' },
+      ...Object.keys(meta).map(name => ({
+        hid: name,
+        name,
+        content: meta[name]
+      }))
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/i.png' }

@@ -27,6 +27,24 @@ export default {
 
     return { slug: params.slug, body: r.data, meta: payload || null }
   },
+  head () {
+    const title = this.meta ? this.meta.title : 'ahn [at] 🇰🇷'
+    const url = `http://ahnheejong.name/${this.slug}`
+    const meta = {
+      'og:title': title,
+      'og:url': url,
+      'twitter:title': title,
+      'twitter:url': url
+    }
+    return {
+      title,
+      meta: Object.keys(meta).map(name => ({
+        hid: name,
+        name,
+        content: meta[name]
+      }))
+    }
+  },
   mounted () {
     const { articles } = this.$store.state
 
