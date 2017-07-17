@@ -8,12 +8,17 @@ const meta = {
   'og:locale': 'ko_kR',
   'og:site_name': 'ahj [at] 🇰🇷',
   'og:title': title,
+  'og:image': 'http://ahnheejong.name/logo.png',
+  'og:image:type': 'image/png',
+  'og:image:width': '1200',
+  'og:image:height': '630',
   'og:url': url,
   'twitter:site': '@heejongahn',
   'twitter:title': title,
   'twitter:description': '👋',
   'twitter:url': url,
-  'twitter:card': 'summary',
+  'twitter:card': 'summary_large_image',
+  'twitter:image': 'http://ahnheejong.name/logo.png',
   'twitter:creator': 'ahn heejong'
 }
 
