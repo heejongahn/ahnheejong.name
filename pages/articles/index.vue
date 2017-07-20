@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="container" ref="container">
     <nuxt-link :key="article.slug" v-for="article in articles" :class="$style.article" :to="`/articles/${article.slug}`">
       <h2 :class="$style.title">{{article.title}}</h2>
       <div :class="$style.date">{{article.date}}</div>
@@ -39,6 +39,7 @@ export default {
     }))
   },
   mounted () {
+    this.$refs.container.parentElement.scrollTop = 0
     const { articles } = this
     const storeArticles = {}
 

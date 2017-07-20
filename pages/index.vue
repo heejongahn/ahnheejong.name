@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="container" ref="container">
     <div id="language-selectors">
       <a
         @click="setLang('ko')"
@@ -91,6 +91,9 @@
 export default {
   data () {
     return { lang: 'ko' }
+  },
+  mounted () {
+    this.$refs.container.parentElement.scrollTop = 0
   },
   methods: {
     setLang: function (lang) {

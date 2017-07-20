@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="container" ref="container">
     <div v-if="meta != null && body != null">
       <div :class="$style.meta">
         <h1 :class="$style.title">{{meta.title}}</h1>
@@ -46,6 +46,7 @@ export default {
     }
   },
   mounted () {
+    this.$refs.container.parentElement.scrollTop = 0
     const { articles } = this.$store.state
 
     if (articles[this.slug] != null) {
