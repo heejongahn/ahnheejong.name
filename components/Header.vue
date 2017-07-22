@@ -21,11 +21,13 @@
         <span class="navEmoji">🎨</span><span class="navLabel">palette</span>
       </span>
     </nav>
-    <div id="three" />
+    <octahedron />
   </header>
 </template>
 
 <script>
+import Octahedron from '~components/Octahedron'
+
 export default {
   data () {
     return {
@@ -52,6 +54,9 @@ export default {
   beforeDestroy () {
     window.removeEventListener('click', this.closeHandler)
     window.removeEventListener('touchend', this.closeHandler)
+  },
+  components: {
+    octahedron: Octahedron
   }
 }
 </script>
