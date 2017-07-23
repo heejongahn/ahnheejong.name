@@ -5,17 +5,7 @@
 <script>
 export default {
   mounted: function () {
-    const containerBoundingRect = this.$el.getBoundingClientRect()
-    const mousePosition = new Vector2()
-
-    this.$el.addEventListener('mousemove', e => {
-      mousePosition.set(
-        e.clientX,
-        e.clientY
-      )
-    })
-
-    render(containerBoundingRect, mousePosition)
+    render()
   }
 }
 
@@ -47,10 +37,22 @@ function getNormalizedMousePosition (windowPosition, mousePosition) {
   }
 }
 
-function render (containerBoundingRect, mousePosition) {
+function render () {
   const WIDTH = 200
   const HEIGHT = WIDTH
   const RADIUS = WIDTH / 6
+
+  const container = document.querySelector('#three')
+
+  const containerBoundingRect = container.getBoundingClientRect()
+
+  const mousePosition = new Vector2()
+  container.addEventListener('mousemove', e => {
+    mousePosition.set(
+      e.clientX,
+      e.clientY
+    )
+  })
 
   const POSITION = {
     top: containerBoundingRect.top,
@@ -71,9 +73,6 @@ function render (containerBoundingRect, mousePosition) {
   const ASPECT = WIDTH / HEIGHT
   const NEAR = 0.1
   const FAR = 10000
-
-  const container =
-      document.querySelector('#three')
 
   const renderer = new WebGLRenderer({
     alpha: true,
