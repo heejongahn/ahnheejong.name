@@ -81,8 +81,8 @@ class Octahedron {
     }
 
     this.velocity = {
-      x: 0,
-      y: 0,
+      x: Math.random() / 20,
+      y: Math.random() / 20,
       z: 0
     }
 
@@ -116,6 +116,17 @@ class Octahedron {
 
   updateMousePosition (e) {
     const normalizedPosition = getNormalizedMousePosition(this.position, { x: e.clientX, y: e.clientY })
+
+    const delta = {
+      y: normalizedPosition.x - this.mousePosition.x,
+      x: normalizedPosition.y - this.mousePosition.y
+    }
+
+    if (this.mouseClicked) {
+      this.octahedron.rotation.x += delta.x
+      this.octahedron.rotation.y += delta.y
+    }
+
     this.mousePosition.set(
       normalizedPosition.x,
       normalizedPosition.y
@@ -132,11 +143,15 @@ class Octahedron {
   }
 
   render () {
+    const THRESHOLD = 0.1
     const update = () => {
-      const speed = Math.random() / 20
-      this.velocity.x = speed
-      this.velocity.y = speed
-      this.velocity.z = speed
+      if (this.velocity.x > THRESHOLD) {
+        this.velocity.x -= 0.05
+      }
+
+      if (this.velocity.y > THRESHOLD) {
+        this.velocity.y -= 0.05
+      }
 
       if (!this.mouseClicked) {
         this.octahedron.rotation.x += this.velocity.x
