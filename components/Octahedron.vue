@@ -47,11 +47,6 @@ class Octahedron {
 
     const containerBoundingRect = this.container.getBoundingClientRect()
 
-    this.renderer = new WebGLRenderer({
-      alpha: true,
-      antialias: true
-    })
-
     this.scene = new Scene()
 
     this.camera = new PerspectiveCamera(
@@ -60,11 +55,23 @@ class Octahedron {
       0.1,
       10000
     )
-
     this.scene.add(this.camera)
 
+    const pointLight = new PointLight(0xFFFFFF, 0.5)
+    pointLight.position.set(100, 100, 30)
+    this.scene.add(pointLight)
+
+    this.octahedron = this.initializeMesh()
+    this.scene.add(this.octahedron)
+
+    this.renderer = new WebGLRenderer({
+      alpha: true,
+      antialias: true
+    })
     this.renderer.setSize(this.width, this.height)
     this.container.appendChild(this.renderer.domElement)
+
+    this.raycaster = new Raycaster()
 
     this.position = {
       top: containerBoundingRect.top,
@@ -81,35 +88,18 @@ class Octahedron {
 
     this.mousePosition = new Vector2(-1, -1)
     this.mouseClicked = false
+    this.intersections = null
 
-    this.container.addEventListener('mousemove', e => {
-      const normalizedPosition = getNormalizedMousePosition(this.position, { x: e.clientX, y: e.clientY })
-      this.mousePosition.set(
-        normalizedPosition.x,
-        normalizedPosition.y
-      )
-    })
+    this.container.addEventListener('mousemove', this.updateMousePosition.bind(this))
 
-    this.container.addEventListener('mousedown', e => {
-      this.mouseClicked = true
-    })
+    this.container.addEventListener('mousedown', this.decideMouseClicked.bind(this))
 
-    this.container.addEventListener('mouseup', e => {
+    window.addEventListener('mouseup', e => {
       this.mouseClicked = false
     })
   }
 
-  render () {
-    const raycaster = new Raycaster()
-
-    const pointLight = new PointLight(0xFFFFFF, 0.5)
-
-    pointLight.position.x = 100
-    pointLight.position.y = 100
-    pointLight.position.z = 30
-
-    this.scene.add(pointLight)
-
+  initializeMesh () {
     const material = new MeshLambertMaterial({
       color: 0xff3030
     })
@@ -121,22 +111,39 @@ class Octahedron {
 
     octahedron.position.z = -this.radius * 10
 
-    this.scene.add(octahedron)
+    return octahedron
+  }
 
+  updateMousePosition (e) {
+    const normalizedPosition = getNormalizedMousePosition(this.position, { x: e.clientX, y: e.clientY })
+    this.mousePosition.set(
+      normalizedPosition.x,
+      normalizedPosition.y
+    )
+  }
+
+  decideMouseClicked () {
+    this.raycaster.setFromCamera(this.mousePosition, this.camera)
+    this.intersections = this.raycaster.intersectObject(this.octahedron)
+
+    if (this.intersections.length > 0) {
+      this.mouseClicked = true
+    }
+  }
+
+  render () {
     const update = () => {
-      raycaster.setFromCamera(this.mousePosition, this.camera)
-      const intersections = raycaster.intersectObject(octahedron)
-
       const speed = Math.random() / 20
       this.velocity.x = speed
       this.velocity.y = speed
       this.velocity.z = speed
 
-      if (intersections.length === 0) {
-        octahedron.rotation.x += this.velocity.x
-        octahedron.rotation.y += this.velocity.y
-        octahedron.rotation.z += this.velocity.z
+      if (!this.mouseClicked) {
+        this.octahedron.rotation.x += this.velocity.x
+        this.octahedron.rotation.y += this.velocity.y
+        this.octahedron.rotation.z += this.velocity.z
       }
+
       this.renderer.render(this.scene, this.camera)
       requestAnimationFrame(update)
     }
