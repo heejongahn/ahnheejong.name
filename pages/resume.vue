@@ -23,13 +23,27 @@
           <li>Improving by cooperation, not competition; <strong>open source spirit!</strong></li>
         </ul>
       </div>
+      <div :class="[$style.subsection, $style.education]">
+        <h2>Eductation</h2>
+          <div :class="$style.educationItem">
+            <h3 :class="$style.educationTitle">KAIST</h3>
+            <p :class="$style.educationDate">2013 March - Present</p>
+            <p>Pursuing <strong>B.A. at School Of Computing</strong><span :class="$style.gpa">(GPA Total 3.62/4.3, Major 3.79/4.3)</span></p>
+            <small :class="$style.military">Currently on a break to do a alternative military service</small>
+          </div>
+          <div :class="$style.educationItem">
+            <h3 :class="$style.educationTitle">Gyeonggi Science High School</h3>
+            <p :class="$style.educationDate">2010 March - 2013 February</p>
+            <p>A student president</p>
+          </div>
+      </div>
     </section>
     <section :class="$style.experience">
       <h1>Experience</h1>
       <div :class="[$style.subsection, $style.experienceItem]">
         <h2 :class="$style.experienceTitle">Programmer, <mark>Spoqa</mark> </h2>
         <p :class="$style.experienceDate">January 2017 - Present</p>
-        <p :class="$style.experienceIntro">Spoqa provides various B2B solutions to help local and brand stores’ customer management. The company's product lineup includes <mark>Dodo Point</mark><small>(point saving / customer management)</small>, <mark>Dodo Message</mark><small>(message marketing)</small>, and <mark>Dodo Ads</mark><small>(location-based advertisement)</small>.</p>
+        <p :class="$style.experienceIntro">Spoqa provides various B2B solutions to help local and brand stores’ customer management.</p>
         <div :class="$style.experienceDetail">
           <h3>Q1 (January 2017 - March 2017)</h3>
           <p>Being one of two programmers of the team, <strong>took charge of the frontend side</strong> of the latest product of Spoqa, <mark>Dodo Manager</mark>.</p>
@@ -55,17 +69,6 @@
             <li>Implement ‘Analysis’ part of the app, by providing <strong>visualization of customer statistics</strong> for the stores.</li>
           </ul>
           <p>For Q3, I’m also <strong>in charge of organizing the project timeline</strong> of the team. </p>
-        </div>
-      </div>
-      <div :class="[$style.subsection, $style.experienceItem]">
-        <h2 :class="$style.experienceTitle">Research Intern, <mark>Naver Labs</mark></h2>
-        <p :class="$style.experienceDate">2015 July - 2015 August</p>
-        <p :class="$style.experienceIntro">In the summer of 2015, I worked as a research intern at DBQA(DataBase Quality Assurance) team for six weeks.</p>
-        <div :class="$style.experienceDetail">
-          <ul>
-            <li><strong>Developed internally used website</strong> for OCR engine QA work by the team, using <mark>Flask</mark>.</li>
-            <li>Gathered and polished data for deep learning projects of other teams.</li>
-          </ul>
         </div>
       </div>
     </section>
@@ -143,20 +146,6 @@
           <li><strong>Control side effects</strong>; Keep it referentially transparent whenever possible.</li>
           <li><strong>Using ADT</strong> to enable precise data encoding.</li>
         </ul>
-      </div>
-    </section>
-    <section :class="$style.education">
-      <h1>Education</h1>
-      <div :class="[$style.subsection, $style.educationItem]">
-        <h2 :class="$style.educationTitle">KAIST</h2>
-        <p :class="$style.educationDate">2013 March - Present</p>
-        <p>Pursuing <strong>B.A. at School Of Computing</strong><span :class="$style.gpa">(GPA Total 3.62/4.3, Major 3.79/4.3)</span></p>
-        <small :class="$style.military">Currently on a break to do a alternative military service</small>
-      </div>
-      <div :class="[$style.subsection, $style.educationItem]">
-        <h2 :class="$style.educationTitle">Gyeonggi Science High School</h2>
-        <p :class="$style.educationDate">2010 March - 2013 February</p>
-        <p>A student president</p>
       </div>
     </section>
     <section :class="$style.additional">
@@ -264,13 +253,13 @@ export default {
     }
 
     @media print {
-      padding-top: 0;
-      page-break-before: always;
-      border: none;
+      padding: 0;
 
-      .profile {
-        page-break-before: avoid;
+      &:not(:last-child) {
+        page-break-after: always;
       }
+
+      border: none;
     }
   }
 
@@ -345,13 +334,7 @@ export default {
   font-weight: bold;
 }
 
-.skill {
-  margin-bottom: 1em;
-}
-
 .frontend {
-  margin-bottom: 1em;
-
   h3 {
     margin-bottom: 0.5em;
   }
@@ -372,7 +355,13 @@ export default {
 }
 
 .educationItem {
+
+  &:not(:nth-child(2)) {
+    margin-top: 2em;
+  }
+
   p {
+    margin-top: 0.5em;
     margin-bottom: 0;
   }
 }
