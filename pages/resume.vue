@@ -2,7 +2,7 @@
   <article :class="$style.resume" ref="container">
     <div :class="$style.head">
       <h1 :class="$style.title">Resume</h1>
-      <a :class="$style.print" @click="print">Click to print</a>
+      <a :class="$style.pdf" target="_blank" href="/ahnheejong_resume.pdf">PDF</a>
     </div>
     <section :class="$style.profile">
       <h1>Ahn Heejong</h1>
@@ -197,11 +197,6 @@ export default {
   },
   mounted () {
     this.$refs.container.parentElement.scrollTop = 0
-  },
-  methods: {
-    print () {
-      window.print()
-    }
   }
 }
 </script>
@@ -314,7 +309,7 @@ export default {
     margin-bottom: 0;
   }
 
-  .print {
+  .pdf {
     text-decoration: underline;
   }
 
