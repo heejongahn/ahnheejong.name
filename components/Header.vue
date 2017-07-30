@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import Octahedron from '~components/Octahedron'
+import Octahedron from '~/components/Octahedron'
 
 export default {
   data () {
