@@ -74,7 +74,7 @@
           i work with modern web frameworks like React, aiming for smooth ux.
           i prefer languages which are powered by a smart type system.
           nowadays, i'm deeply into bridging two worlds: programming and design.
-          see <nuxt-link to="/resume">resume</nuxt-link> for more details.
+          see <nuxt-link to="/resume/">resume</nuxt-link> for more details.
         </div>
       </section>
       <section class="interest">

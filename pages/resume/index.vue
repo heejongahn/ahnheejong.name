@@ -352,7 +352,6 @@ export default {
 }
 
 .educationItem {
-
   &:not(:nth-child(2)) {
     margin-top: 2em;
   }
@@ -380,7 +379,6 @@ export default {
     }
   }
 }
-
 
 .experienceDate,
 .educationDate {
