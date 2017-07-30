@@ -202,6 +202,7 @@ export default {
 </script>
 
 <style>
+/*
 @media print {
   #root {
     height: auto !important;
@@ -217,6 +218,7 @@ export default {
     margin-top: 0;
   }
 }
+*/
 </style>
 
 <style module lang="scss">
