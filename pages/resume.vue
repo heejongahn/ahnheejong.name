@@ -10,16 +10,16 @@
       <div><a href="tel:+821066796756">+82 10-6679-6756</a></div>
       <div><a href="mailto:heejongahn@gmail.com">heejongahn@gmail.com</a></div>
       <div><a href="http://ahnheejong.name">http://ahnheejong.name</a></div>
-      <p>I have two main focus as an engineer:</p>
+      <p>I have two main focuses as an engineer:</p>
       <ul>
-        <li :class="$style.focus">Smoothly bridging the gap between the code and design</li>
-        <li :class="$style.focus">Programming languages adopting practical and powerful type system</li>
+        <li :class="$style.focus">Smoothly bridging the gap between code and design</li>
+        <li :class="$style.focus">Programming languages adopting practical and powerful type systems</li>
       </ul>
       <div :class="[$style.subsection, $style.interest]">
-        <h2>Interest</h2>
+        <h2>Interests</h2>
         <ul>
           <li>Making beautiful and usable things with robust and readable code.</li>
-          <li>Building challenging, open team where good people gets even better.</li>
+          <li>Building a challenging, open team where good people get even better.</li>
           <li>Improving by cooperation, not competition; <strong>open source spirit!</strong></li>
         </ul>
       </div>
@@ -40,7 +40,7 @@
         </div>
         <div :class="$style.experienceDetail">
           <h3>Q2 (April 2017 - June 2017)</h3>
-          <p>For the second quarter, the team migrated improve version of <mark>Dodo Message</mark>, a message based marketing platform into Dodo Manager.</p>
+          <p>For the second quarter, the team migrated an improved version of <mark>Dodo Message</mark>, a message based marketing platform into Dodo Manager.</p>
           <ul>
             <li>Implemented ‘Message’ part of the app, which includes <strong>multi-step message writing form</strong> and <strong>simple dashboard for marketing result analysis</strong>.</li>
             <li>Made <strong>challenging UI components</strong> like a small text editor with auto input button, slide-based range selector and so on.</li>
@@ -48,7 +48,7 @@
         </div>
         <div :class="$style.experienceDetail">
           <h3>Q3 (July 2017 - Present)</h3>
-          <p>To official launch the product, the team focuses on making the app more robust.</p>
+          <p>To officially launch the product, the team focuses on making the app more robust.</p>
           <ul>
             <li><strong>Replace entire codebase</strong> using Facebook’s <mark>Flow</mark> with MS’s <mark>Typescript</mark> for higher productivity and stability.</li>
             <li><strong>Adapt automated e2e and unit testing environment</strong> using <mark>Selenium</mark>, <mark>Mocha</mark>, and other testing libraries / frameworks.</li>
@@ -60,7 +60,7 @@
       <div :class="[$style.subsection, $style.experienceItem]">
         <h2 :class="$style.experienceTitle">Research Intern, <mark>Naver Labs</mark></h2>
         <p :class="$style.experienceDate">2015 July - 2015 August</p>
-        <p :class="$style.experienceIntro">In the summer of 2015, I worked as a research intern at DBQA(DataBase Quality Assurance) team for six weeks.</p>
+        <p :class="$style.experienceIntro">In the summer of 2015, I worked as a research intern at DBQA (DataBase Quality Assurance) team for six weeks.</p>
         <div :class="$style.experienceDetail">
           <ul>
             <li><strong>Developed internally used website</strong> for OCR engine QA work by the team, using <mark>Flask</mark>.</li>
@@ -129,14 +129,14 @@
         <ul>
           <li><strong>VCS</strong>: Using <mark>git</mark> since 2014 on a daily basis. For any project, my first command is always  <code class='code-inline'>git init</code>.</li>
           <li><strong>Server-side programming</strong>: Python<small>(Flask + SQLAlchemy)</small>, Node<small>(express.js)</small>.</li>
-          <li><strong>Theoretical CS background</strong>: Knowledge of with widely used DS and basic algorithm.</li>
+          <li><strong>Theoretical CS background</strong>: Knowledge of widely used DS and basic algorithm.</li>
           <li><strong>System programming</strong>: Have implemented minimal assembler, OS<small>(PintOS)</small> during undergraduate curriculum.</li>
           <li><strong>Server Administration</strong>: UNIX-like environment, CLI utilities, AWS<small>(EC2, S3, CloudFront, Route53)</small>.</li>
         </ul>
       </div>
       <div :class="[$style.subsection, $style.skill]">
         <h2>Functional Programming</h2>
-        <p>I’ve learnt lot of nice practices from <strong>the principles of functional programming</strong>. Whenever I confront interesting problems, these are my main toolbox to look at.</p>
+        <p>I’ve learnt a lot of nice practices from <strong>the principles of functional programming</strong>. Whenever I confront interesting problems, this is my main toolbox to look at.</p>
         <ul>
           <li><strong>Favor composition over inheritance</strong>.</li>
           <li>Utilize power of simple functions like <code>map</code>, <code>reduce</code>, and <code>filter</code>.</li>
@@ -165,10 +165,10 @@
         <h2>Links</h2>
         <p>When I leave trails on the web, I try to do so with my identity revealed.  I believe this policy helps me stay responsible.</p>
         <ul>
-          <li>Personal blog : <a target="_blank" href="https://hjlog.me">https://hjlog.me</a></li>
-          <li>Github : <a target="_blank" href="https://github.com/heejongahn">https://github.com/heejongahn</a></li>
+          <li>Personal blog: <a target="_blank" href="https://hjlog.me">https://hjlog.me</a></li>
+          <li>Github: <a target="_blank" href="https://github.com/heejongahn">https://github.com/heejongahn</a></li>
           <li>Twitter: <a target="_blank" href="http://twitter.com/heejongahn">twitter.com/heejongahn</a></li>
-          <li>LinkedIn : <a target="_blank" href="https://linkedin.com/in/heejongahn">https://linkedin.com/in/heejongahn</a></li>
+          <li>LinkedIn: <a target="_blank" href="https://linkedin.com/in/heejongahn">https://linkedin.com/in/heejongahn</a></li>
           <li>Slideshare: <a target="_blank" href="https://www.slideshare.net/HeejongAhn/">https://www.slideshare.net/HeejongAhn/</a></li>
           <li>Medium: <a target="_blank" href="https://medium.com/@heejongahn">https://medium.com/@heejongahn</a></li>
         </ul>
