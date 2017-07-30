@@ -1,4 +1,4 @@
-<<template>
+<template>
   <header>
     <nuxt-link to="/" class="name">ahn
       heejong
