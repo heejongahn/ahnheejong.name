@@ -1,5 +1,5 @@
 <template>
-  <article :class="$style.resume" ref="container">
+  <section class="container" :class="$style.resume" ref="container">
     <div :class="$style.head">
       <h1 :class="$style.title">Resume</h1>
       <a :class="$style.pdf" target="_blank" href="/ahnheejong_resume.pdf">PDF</a>
@@ -172,7 +172,7 @@
         </ul>
       </div>
     </section>
-  </article>
+  </section>
 </template>
 
 <script>
