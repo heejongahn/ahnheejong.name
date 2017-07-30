@@ -11,7 +11,7 @@
           <a href="https://twitter.com/heejongahn">twitter</a>
         </div>
         <small>
-          this site is powered by
+          this site (<a target="_blank" href="https://github.com/heejongahn/ahnheejong.name">source code</a>) is powered by
           <a href="https://nuxtjs.org/">Nuxt.js</a>,
           <a href="https://pages.github.com/">Github Pages</a> and 🍺
         </small>
