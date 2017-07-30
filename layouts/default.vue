@@ -30,7 +30,6 @@ export default {
 
 </script>
 <style lang="scss">
-@import '~open-color/open-color.scss';
 @import '~assets/media-query';
 @import '~assets/placeholders';
 

@@ -1,13 +1,17 @@
-@import '~open-color/open-color.scss';
+@import '~assets/variables';
 
 /* general */
 body {
   margin: 0;
-  font-family: "Spoqa Han Sans", "spoqahansans", "Apple SD Gothic Neo", "Nanum Barun Gothic", "Nanum Gothic", Verdana, Arial, "Malgun Gothic", Dotum, sans-serif;
+  font-family: $font-family-shs;
+}
+
+header {
+  font-family: $font-family-avenir;
 }
 
 body, a, div, span, p, li, h1, h2, h3, h4, h5, h6 {
-  color: $oc-gray-8;
+  color: $text-color;
 }
 
 h2 {
@@ -15,6 +19,7 @@ h2 {
 }
 
 a {
+  cursor: pointer;
   transition: color 0.2s ease;
 
   &:hover {

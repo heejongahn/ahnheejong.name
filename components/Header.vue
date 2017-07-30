@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '~open-color/open-color.scss';
+@import '~assets/variables';
 @import '~assets/media-query';
 @import '~assets/placeholders';
 
@@ -73,7 +73,7 @@ $nav-link-size: 40px;
   width: $nav-link-size;
   height: $nav-link-size;
   border-radius: 20px;
-  background-color: rgba($oc-gray-0, 0.9);
+  background-color: rgba($bg-gray, 0.9);
 
   @include not-phone {
     background: none;
@@ -120,7 +120,7 @@ header {
   line-height: 1;
 
   &:hover {
-    color: $oc-gray-8;
+    color: $text-color;
   }
 
   @include not-phone {
@@ -148,7 +148,7 @@ header {
 .navToggleBar {
   width: 100%;
   height: 2px;
-  border-top: 2px solid $oc-gray-8;
+  border-top: 2px solid $border-color-dark;
 
   transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transform-origin: center;
