@@ -172,10 +172,10 @@ class Octahedron {
 @import '~assets/media-query';
 
 #three {
-  visibility: hidden;
+  display: none;
 
   @include not-phone {
-    visibility: visible;
+    display: block;
   }
 }
 
