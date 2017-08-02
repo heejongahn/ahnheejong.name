@@ -75,7 +75,7 @@ $nav-link-size: 40px;
   border-radius: 20px;
   background-color: rgba($bg-gray, 0.9);
 
-  @include not-phone {
+  @include wide-screen {
     background: none;
   }
 }
@@ -95,7 +95,7 @@ header {
   height: $header-height;
   padding: 0 1em;
 
-  @include not-phone {
+  @include wide-screen {
     position: initial;
 
     height: auto;
@@ -123,7 +123,7 @@ header {
     color: $text-color;
   }
 
-  @include not-phone {
+  @include wide-screen {
     font-size: 3rem;
     white-space: pre-line;
     margin: 0;
@@ -140,7 +140,7 @@ header {
   align-items: center;
   justify-content: space-around;
 
-  @include not-phone {
+  @include wide-screen {
     display: none;
   }
 }
@@ -180,7 +180,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
 
-  @include not-phone {
+  @include wide-screen {
     position: initial;
 
     display: block;
@@ -211,7 +211,7 @@ header {
 
   margin-bottom: 20px;
 
-  @include not-phone {
+  @include wide-screen {
     pointer-events: initial;
     transform: none;
 
@@ -291,7 +291,7 @@ header {
     font-weight: bold;
   }
 
-  @include not-phone {
+  @include wide-screen {
     &.disabled {
       opacity: 0.5;
     }
@@ -302,7 +302,7 @@ header {
   display: none;
   margin-left: 12px;
 
-  @include not-phone {
+  @include wide-screen {
     display: block;
   }
 }
@@ -310,7 +310,7 @@ header {
 #three {
   display: none;
 
-  @include not-phone {
+  @include wide-screen {
     display: block;
   }
 }

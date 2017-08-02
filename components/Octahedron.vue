@@ -174,7 +174,7 @@ class Octahedron {
 #three {
   display: none;
 
-  @include not-phone {
+  @include wide-screen {
     display: block;
   }
 }

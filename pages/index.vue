@@ -127,7 +127,7 @@ export default {
     margin-top: 1em;
   }
 
-  @include not-phone {
+  @include wide-screen {
     white-space: pre-line;
   }
 }

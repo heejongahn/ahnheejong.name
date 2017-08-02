@@ -202,7 +202,6 @@ export default {
 </script>
 
 <style>
-/*
 @media print {
   #root {
     height: auto !important;
@@ -218,7 +217,6 @@ export default {
     margin-top: 0;
   }
 }
-*/
 </style>
 
 <style module lang="scss">
@@ -300,7 +298,7 @@ export default {
     display: none;
   }
 
-  @include not-phone {
+  @include wide-screen {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;

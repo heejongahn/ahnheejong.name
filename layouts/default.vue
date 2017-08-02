@@ -43,7 +43,7 @@ $header-height: 60px;
   flex-direction: column;
   min-height: 100vh;
 
-  @include not-phone {
+  @include wide-screen {
     flex-direction: row;
     align-items: flex-start;
 
@@ -70,7 +70,7 @@ footer {
   display: flex;
   flex-direction: column;
 
-  @include not-phone {
+  @include wide-screen {
     padding: 5%;
     margin-top: 0;
 

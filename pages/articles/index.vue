@@ -68,7 +68,7 @@ export default {
     background-color: rgba(0, 0, 0, 0.02);
   }
 
-  @include not-phone {
+  @include wide-screen {
   }
 }
 
