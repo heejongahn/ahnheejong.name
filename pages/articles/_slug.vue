@@ -69,10 +69,15 @@ export default {
 </script>
 
 <style module lang="scss">
+@import '~assets/media-query';
+
 .title {
   margin: 0;
   font-size: 4em;
-  word-break: keep-all;
+
+  @include wide-screen {
+    word-break: keep-all;
+  }
 }
 
 .date {
