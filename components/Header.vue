@@ -306,13 +306,4 @@ header {
     display: block;
   }
 }
-
-#three {
-  display: none;
-
-  @include wide-screen {
-    display: block;
-  }
-}
-
 </style>
