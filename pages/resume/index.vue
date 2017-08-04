@@ -6,7 +6,7 @@
     </div>
     <section :class="$style.profile">
       <h1>Ahn Heejong</h1>
-      <strong :class="$style.oneLiner">I fear less, challenge often, and learn fast.</strong>
+      <strong :class="$style.oneLiner">I fear little, challenge often, and learn fast.</strong>
       <div><a href="tel:+821066796756">+82 10-6679-6756</a></div>
       <div><a href="mailto:heejongahn@gmail.com">heejongahn@gmail.com</a></div>
       <div><a href="http://ahnheejong.name">http://ahnheejong.name</a></div>
@@ -24,7 +24,7 @@
         </ul>
       </div>
       <div :class="[$style.subsection, $style.education]">
-        <h2>Eductation</h2>
+        <h2>Education</h2>
           <div :class="$style.educationItem">
             <h3 :class="$style.educationTitle">KAIST</h3>
             <p :class="$style.educationDate">2013 March - Present</p>
