@@ -17,9 +17,9 @@
       <nuxt-link to="/articles/" class="navLink" active-class="active">
         <span @click="navCollapse()" class="navEmoji">📝</span><span class="navLabel">articles</span>
       </nuxt-link>
-      <span class="navLink disabled">
+      <nuxt-link to="/palette/" class="navLink" active-class="active">
         <span class="navEmoji">🎨</span><span class="navLabel">palette</span>
-      </span>
+      </nuxt-link>
     </nav>
     <octahedron />
   </header>
