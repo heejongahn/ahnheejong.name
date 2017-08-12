@@ -1,11 +1,11 @@
 <template>
-  <div id="three" />
+  <div :class="$style.octahedron" />
 </template>
 
 <script>
 export default {
   mounted: function () {
-    const octahedron = new Octahedron()
+    const octahedron = new Octahedron(this.$el)
     octahedron.render()
   }
 }
@@ -39,8 +39,9 @@ function getNormalizedMousePosition (windowPosition, mousePosition) {
 }
 
 class Octahedron {
-  constructor () {
-    this.container = document.querySelector('#three')
+  constructor (container) {
+    this.container = container
+    // document.querySelector(selector || '#three')
     this.width = 200
     this.height = this.width
     this.radius = this.width / 6
@@ -168,10 +169,10 @@ class Octahedron {
 }
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @import '~assets/media-query';
 
-#three {
+.octahedron {
   display: none;
 
   @include wide-screen {
