@@ -7,9 +7,11 @@
         <painting
           v-for="painting in ui"
           :key="painting.title"
+          :id="painting.id"
           :title="painting.title"
           :description="painting.description"
         >
+          <component :is="painting.component" />
         </painting>
       </div>
     </section>
@@ -18,8 +20,8 @@
       <div :class="$style.paintings">
         <painting
           v-for="painting in graphics"
-          :id="painting.id"
           :key="painting.title"
+          :id="painting.id"
           :title="painting.title"
           :description="painting.description"
         >
@@ -31,8 +33,13 @@
 </template>
 
 <script>
-import Octahedron from '~/components/Octahedron'
 import Painting from '~/components/Painting'
+
+/* UI */
+import FBShimmer from './fb-shimmer/_FBShimmer'
+
+/* Graphics */
+import Octahedron from '~/components/Octahedron'
 
 export default {
   components: {
@@ -40,9 +47,11 @@ export default {
   },
   data () {
     return {
-      ui: [],
+      ui: [
+        { id: 'fb-shimmer', title: 'FB Shimmer', description: 'Facebook\'s shimmering placeholder', component: FBShimmer }
+      ],
       graphics: [
-        { title: 'Octahedron', description: 'Three.js를 이용해 처음 그려본 다면체', component: Octahedron, id: 'octahedron' }
+        { id: 'octahedron', title: 'Octahedron', description: 'My first three.js experiment', component: Octahedron }
       ]
     }
   }
