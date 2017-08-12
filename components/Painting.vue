@@ -22,6 +22,7 @@ export default {
 
 <style module lang="scss">
 @import '~assets/variables';
+@import '~assets/media-query';
 
 .paintingLink {
   width: 100%;
@@ -34,10 +35,13 @@ export default {
   display: flex;
   flex-direction: column;
 
-  padding: 1em;
   border-radius: 20px;
 
   transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+  @include wide-screen {
+    padding: 1em;
+  }
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.02);
@@ -45,10 +49,14 @@ export default {
 }
 
 .commentary {
-  position: absolute;
-  text-align: right;
-  bottom: 2em;
-  right: 2em;
+  padding-top: 1em;
+
+  @include wide-screen {
+    position: absolute;
+    text-align: right;
+    bottom: 2em;
+    right: 2em;
+  }
 }
 
 .title {
