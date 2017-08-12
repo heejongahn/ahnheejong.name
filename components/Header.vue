@@ -1,27 +1,27 @@
 <template>
   <header>
-    <nuxt-link to="/" class="name">ahn
+    <nuxt-link to="/" :class="$style.name">ahn
       heejong
     </nuxt-link>
     <div
       @click="navToggleClicked()"
-      :class="navCollapsed ? 'navToggle' : 'navToggle opened'">
-      <div class="navToggleBar"></div>
-      <div class="navToggleBar"></div>
-      <div class="navToggleBar"></div>
+      :class="navCollapsed ? $style.navToggle : [$style.navToggle, $style.opened]">
+      <div :class="$style.navToggleBar"></div>
+      <div :class="$style.navToggleBar"></div>
+      <div :class="$style.navToggleBar"></div>
     </div>
-    <nav :class="navCollapsed ? 'nav' : 'nav visible'">
-      <nuxt-link to="/" class="navLink" exact-active-class="active">
-        <span @click="navCollapse()" class="navEmoji">🏡</span><span class="navLabel">home</span>
+    <nav :class="navCollapsed ? $style.nav : [$style.nav, $style.visible]">
+      <nuxt-link to="/" :class="$style.navLink" :exact-active-class="$style.active">
+        <span @click="navCollapse()" :class="$style.navEmoji">🏡</span><span :class="$style.navLabel">home</span>
       </nuxt-link>
-      <nuxt-link to="/articles/" class="navLink" active-class="active">
-        <span @click="navCollapse()" class="navEmoji">📝</span><span class="navLabel">articles</span>
+      <nuxt-link to="/articles/" :class="$style.navLink" :active-class="$style.active">
+        <span @click="navCollapse()" :class="$style.navEmoji">📝</span><span :class="$style.navLabel">articles</span>
       </nuxt-link>
-      <nuxt-link to="/palette/" class="navLink" active-class="active">
-        <span class="navEmoji">🎨</span><span class="navLabel">palette</span>
+      <nuxt-link to="/palette/" :class="$style.navLink" :active-class="$style.active">
+        <span :class="$style.navEmoji">🎨</span><span :class="$style.navLabel">palette</span>
       </nuxt-link>
     </nav>
-    <octahedron />
+    <octahedron :class="$style.octahedron" />
   </header>
 </template>
 
@@ -61,7 +61,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @import '~assets/variables';
 @import '~assets/media-query';
 @import '~assets/placeholders';
@@ -81,6 +81,8 @@ $nav-link-size: 40px;
 }
 
 header {
+  z-index: 1000;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -199,7 +201,6 @@ header {
   pointer-events: none;
   animation-fill-mode: forwards;
 
-  opacity: 0;
   transform: translateY(10px);
 
   justify-content: center;
@@ -270,10 +271,6 @@ header {
   @for $i from 0 to 3 {
     @include popup($i);
 
-    @if ($i == 2) {
-      @include popup($i, true);
-    }
-
     .navLink:nth-child(#{$i + 1}) {
       animation-name: popup#{$i};
       animation-duration: 1s;
@@ -301,6 +298,14 @@ header {
 .navLabel {
   display: none;
   margin-left: 12px;
+
+  @include wide-screen {
+    display: block;
+  }
+}
+
+.octahedron {
+  display: none;
 
   @include wide-screen {
     display: block;
