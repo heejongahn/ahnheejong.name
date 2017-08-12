@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.octahedron" />
+  <div />
 </template>
 
 <script>
@@ -168,16 +168,3 @@ class Octahedron {
   }
 }
 </script>
-
-<style module lang="scss">
-@import '~assets/media-query';
-
-.octahedron {
-  display: none;
-
-  @include wide-screen {
-    display: block;
-  }
-}
-
-</style>
