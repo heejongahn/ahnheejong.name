@@ -1,6 +1,7 @@
 <template>
   <section class="container" :class="$style.palette">
-    <h1>Draw by Code</h1>
+    <h1>Palette</h1>
+    <p>Small paintings I drew with code.</p>
     <section :class="[$style.section, $style.ui]">
       <h2>UI</h2>
       <div :class="$style.paintings">
@@ -63,6 +64,7 @@ export default {
 .section {
   display: flex;
   flex-direction: column;
+  padding: 20px 0;
 }
 
 .paintings {
@@ -71,4 +73,11 @@ export default {
   justify-content: space-between;
 }
 
+</style>
+
+<style scoped>
+.octahedron {
+  width: 200px;
+  height: 200px;
+}
 </style>
