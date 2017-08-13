@@ -224,7 +224,6 @@ export default {
 @import '~assets/media-query';
 
 .resume {
-  font-family: $font-family-avenir;
   max-width: 600px;
 
   @media print {

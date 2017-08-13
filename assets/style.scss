@@ -3,15 +3,17 @@
 /* general */
 body {
   margin: 0;
-  font-family: $font-family-shs;
-}
-
-header {
-  font-family: $font-family-avenir;
+  font-family: $font-family;
 }
 
 body, a, div, span, p, li, h1, h2, h3, h4, h5, h6 {
   color: $text-color;
+}
+
+article,aside,nav,section {
+  h1 {
+    font-size: 2em;
+  }
 }
 
 h2 {
