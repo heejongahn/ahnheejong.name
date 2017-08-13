@@ -5,7 +5,7 @@
     <section :class="[$style.section, $style.ui]">
       <h2>UI</h2>
       <div :class="$style.paintings">
-        <painting
+        <painting-card
           v-for="painting in ui"
           :key="painting.title"
           :id="painting.id"
@@ -13,13 +13,13 @@
           :description="painting.description"
         >
           <component :is="painting.component" />
-        </painting>
+        </painting-card>
       </div>
     </section>
     <section :class="[$style.section, $style.graphics]">
       <h2>Graphics</h2>
       <div :class="$style.paintings">
-        <painting
+        <painting-card
           v-for="painting in graphics"
           :key="painting.title"
           :id="painting.id"
@@ -27,14 +27,14 @@
           :description="painting.description"
         >
           <component :is="painting.component" />
-        </painting>
+        </painting-card>
       </div>
     </section>
   </section>
 </template>
 
 <script>
-import Painting from '~/components/Painting'
+import PaintingCard from '~/components/PaintingCard'
 
 /* UI */
 import FBShimmer from './fb-shimmer/_FBShimmer'
@@ -44,7 +44,7 @@ import Octahedron from '~/components/Octahedron'
 
 export default {
   components: {
-    painting: Painting
+    'painting-card': PaintingCard
   },
   data () {
     return {
