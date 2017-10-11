@@ -59,7 +59,7 @@ export default {
 .article {
   @extend %reset-anchor-style;
   display: block;
-  transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: background-color 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
   padding: 12px;
   border-radius: 4px;
