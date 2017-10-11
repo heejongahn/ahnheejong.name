@@ -1,5 +1,5 @@
 <template>
-  <section class="container" :class="$style.palette">
+  <section class="container" ref="container" :class="$style.palette">
     <h1>Palette</h1>
     <p>Small paintings I drew with code.</p>
     <section :class="[$style.section, $style.ui]">
@@ -42,6 +42,16 @@ import FBShimmer from './fb-shimmer/_FBShimmer'
 /* Graphics */
 import Octahedron from '~/components/Octahedron'
 
+const title = '🎨 [of] ahj'
+const url = 'http://ahnheejong.name/palette/'
+
+const meta = {
+  'og:title': title,
+  'og:url': url,
+  'twitter:title': title,
+  'twitter:url': url
+}
+
 export default {
   components: {
     'painting-card': PaintingCard
@@ -55,6 +65,17 @@ export default {
         { id: 'octahedron', title: 'Octahedron', description: 'My first three.js experiment', component: Octahedron }
       ]
     }
+  },
+  head: {
+    title,
+    meta: Object.keys(meta).map(name => ({
+      hid: name,
+      name,
+      content: meta[name]
+    }))
+  },
+  mounted () {
+    this.$refs.container.parentElement.scrollTop = 0
   }
 }
 </script>

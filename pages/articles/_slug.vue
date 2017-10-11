@@ -29,7 +29,7 @@ export default {
   },
   head () {
     const title = this.meta ? this.meta.title : 'ahn [at] 🇰🇷'
-    const url = `http://ahnheejong.name/${this.slug}`
+    const url = `http://ahnheejong.name/articles/${this.slug}/`
     const meta = {
       'og:title': title,
       'og:url': url,

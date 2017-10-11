@@ -16,7 +16,7 @@ import axios from 'axios'
 const S3_BASE_PATH = 'https://s3.ap-northeast-2.amazonaws.com/ahnheejong.name-articles'
 
 const title = '📝 [from] ahj'
-const url = 'http://ahnheejong.name'
+const url = 'http://ahnheejong.name/articles/'
 
 const meta = {
   'og:title': title,
