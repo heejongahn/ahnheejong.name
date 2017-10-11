@@ -12,32 +12,20 @@
 </template>
 
 <script>
+import { getHead } from '~/utils'
+
 import Painting from '~/components/Painting'
 import Octahedron from '~/components/Octahedron'
 
 const title = '🎨 Octahedron'
 const url = 'http://ahnheejong.name/palette/octahedron/'
 
-const meta = {
-  'og:title': title,
-  'og:url': url,
-  'twitter:title': title,
-  'twitter:url': url
-}
-
 export default {
   components: {
     'painting': Painting,
     'octahedron': Octahedron
   },
-  head: {
-    title,
-    meta: Object.keys(meta).map(name => ({
-      hid: name,
-      name,
-      content: meta[name]
-    }))
-  },
+  head: getHead(title, url),
   mounted () {
     this.$refs.container.parentElement.scrollTop = 0
   }

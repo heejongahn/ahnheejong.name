@@ -176,24 +176,13 @@
 </template>
 
 <script>
+import { getHead } from '~/utils'
+
 export default {
   head () {
     const title = "ahn heejong's resume"
     const url = 'http://ahnheejong.name/resume'
-    const meta = {
-      'og:title': title,
-      'og:url': url,
-      'twitter:title': title,
-      'twitter:url': url
-    }
-    return {
-      title,
-      meta: Object.keys(meta).map(name => ({
-        hid: name,
-        name,
-        content: meta[name]
-      }))
-    }
+    return getHead(title, url)
   },
   mounted () {
     this.$refs.container.parentElement.scrollTop = 0

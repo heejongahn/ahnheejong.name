@@ -13,31 +13,19 @@
 <script>
 import axios from 'axios'
 
+import { getHead } from '~/utils'
+
 const S3_BASE_PATH = 'https://s3.ap-northeast-2.amazonaws.com/ahnheejong.name-articles'
 
 const title = '📝 [from] ahj'
 const url = 'http://ahnheejong.name/articles/'
-
-const meta = {
-  'og:title': title,
-  'og:url': url,
-  'twitter:title': title,
-  'twitter:url': url
-}
 
 export default {
   async asyncData () {
     const r = await axios(`${S3_BASE_PATH}/index.json`, { responseType: 'json' })
     return { articles: r.data }
   },
-  head: {
-    title,
-    meta: Object.keys(meta).map(name => ({
-      hid: name,
-      name,
-      content: meta[name]
-    }))
-  },
+  head: getHead(title, url),
   mounted () {
     this.$refs.container.parentElement.scrollTop = 0
     const { articles } = this

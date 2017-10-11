@@ -36,6 +36,8 @@
 <script>
 import PaintingCard from '~/components/PaintingCard'
 
+import { getHead } from '~/utils'
+
 /* UI */
 import FBShimmer from './fb-shimmer/_FBShimmer'
 
@@ -44,13 +46,6 @@ import Octahedron from '~/components/Octahedron'
 
 const title = '🎨 [of] ahj'
 const url = 'http://ahnheejong.name/palette/'
-
-const meta = {
-  'og:title': title,
-  'og:url': url,
-  'twitter:title': title,
-  'twitter:url': url
-}
 
 export default {
   components: {
@@ -66,14 +61,7 @@ export default {
       ]
     }
   },
-  head: {
-    title,
-    meta: Object.keys(meta).map(name => ({
-      hid: name,
-      name,
-      content: meta[name]
-    }))
-  },
+  head: getHead(title, url),
   mounted () {
     this.$refs.container.parentElement.scrollTop = 0
   }

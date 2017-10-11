@@ -16,32 +16,20 @@
 </template>
 
 <script>
+import { getHead } from '~/utils'
+
 import Painting from '~/components/Painting'
 import FBShimmer from './_FBShimmer'
 
 const title = '🎨 Facebook Shimmer'
 const url = 'http://ahnheejong.name/palette/fb-shimmer/'
 
-const meta = {
-  'og:title': title,
-  'og:url': url,
-  'twitter:title': title,
-  'twitter:url': url
-}
-
 export default {
   components: {
     'painting': Painting,
     'fb-shimmer': FBShimmer
   },
-  head: {
-    title,
-    meta: Object.keys(meta).map(name => ({
-      hid: name,
-      name,
-      content: meta[name]
-    }))
-  },
+  head: getHead(title, url),
   mounted () {
     this.$refs.container.parentElement.scrollTop = 0
   }

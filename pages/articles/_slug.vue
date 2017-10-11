@@ -18,6 +18,8 @@
 import axios from 'axios'
 import marked from 'marked'
 
+import { getHead } from '~/utils'
+
 const S3_BASE_PATH = 'https://s3.ap-northeast-2.amazonaws.com/ahnheejong.name-articles'
 
 export default {
@@ -30,20 +32,8 @@ export default {
   head () {
     const title = this.meta ? this.meta.title : 'ahn [at] 🇰🇷'
     const url = `http://ahnheejong.name/articles/${this.slug}/`
-    const meta = {
-      'og:title': title,
-      'og:url': url,
-      'twitter:title': title,
-      'twitter:url': url
-    }
-    return {
-      title,
-      meta: Object.keys(meta).map(name => ({
-        hid: name,
-        name,
-        content: meta[name]
-      }))
-    }
+
+    return getHead(title, url)
   },
   mounted () {
     this.$refs.container.parentElement.scrollTop = 0
