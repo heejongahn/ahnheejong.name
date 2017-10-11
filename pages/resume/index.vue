@@ -41,8 +41,15 @@
     <section :class="$style.experience">
       <h1>Experience</h1>
       <div :class="[$style.subsection, $style.experienceItem]">
+        <h2 :class="$style.experienceTitle">Programmer, <mark>Hyperconnect</mark> </h2>
+        <p :class="$style.experienceDate">October 2017 - present</p>
+        <p :class="$style.experienceIntro">Working as a web frontend developer (to be updated).</p>
+        <div :class="$style.experienceDetail">
+        </div>
+      </div>
+      <div :class="[$style.subsection, $style.experienceItem]">
         <h2 :class="$style.experienceTitle">Programmer, <mark>Spoqa</mark> </h2>
-        <p :class="$style.experienceDate">January 2017 - Present</p>
+        <p :class="$style.experienceDate">January 2017 - September 2017</p>
         <p :class="$style.experienceIntro">Spoqa provides various B2B solutions to help local and brand stores’ customer management.</p>
         <div :class="$style.experienceDetail">
           <h3>Q1 (January 2017 - March 2017)</h3>
