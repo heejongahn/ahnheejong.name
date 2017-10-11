@@ -61,14 +61,16 @@ export default {
   display: block;
   transition: background-color 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
-  padding: 12px;
-  border-radius: 4px;
+  margin: 12px 0;
+  padding: 12px 8px;
+  border-radius: 8px;
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.02);
   }
 
   @include wide-screen {
+    padding: 12px;
   }
 }
 
