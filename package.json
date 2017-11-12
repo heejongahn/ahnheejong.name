@@ -21,7 +21,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate; echo ahnheejong.name > dist/CNAME",
-    "deploy": "git subtree push --prefix dist gh-pages master",
+    "deploy": "git push; git subtree push --prefix dist gh-pages master",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
   },
