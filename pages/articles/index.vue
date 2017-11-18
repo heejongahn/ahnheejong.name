@@ -1,5 +1,6 @@
 <template>
   <section class="container" ref="container">
+    <a :class="$style.atomFeed" href="/atom.xml" target="_blank">atom feed</a>
     <nuxt-link :key="article.slug" v-for="article in articles" :class="$style.article" :to="`/articles/${article.slug}`">
       <h2 :class="$style.title">{{article.title}}</h2>
       <div :class="$style.date">{{article.date}}</div>
@@ -43,6 +44,17 @@ export default {
 <style module lang="scss">
 @import '~assets/media-query';
 @import '~assets/placeholders';
+
+.atomFeed {
+  font-weight: bold;
+  color: $text-color;
+  text-decoration: none;
+
+  padding-left: 8px;
+  @include wide-screen {
+    padding-left: 12px;
+  }
+}
 
 .article {
   @extend %reset-anchor-style;
