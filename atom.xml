@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://ahnheejong.name</id>
+  <title>ahnheejong.name articles</title>
+  <link href="http://ahnheejong.name/" />
+  <link href="http://ahnheejong.name/atom.xml" rel="self"/>
+  <updated>2017-11-18T15:00+09</updated>
+  <author>
+    <name>Ahn Heejong</name>
+    <email>heejongahn@gmail.com</email>
+    <uri>http://ahnheejong.name/</uri>
+  </author>
+
+  <entry>
+    <title>play.node 2017 발표기</title>
+    <link href="http://ahnheejong.name/articles/playnode-2017" />
+    <id>http://ahnheejong.name/articles/playnode-2017/</id>
+    <updated>2017-11-12T21:00+09</updated>
+    <summary>play.node 2017에서의 생애 첫 컨퍼런스 발표기.</summary>
+  </entry>
+
+  <entry>
+    <title>타입과 타입 시스템 : 기본 개념</title>
+    <link href="http://ahnheejong.name/articles/types-basic-concepts" />
+    <id>http://ahnheejong.name/articles/types-basic-concepts/</id>
+    <updated>2017-10-24T21:00+09</updated>
+    <summary>[타입과 타입 시스템] 연재 두 번째 글. 타입에 관한 기본 개념들을 다룬다.</summary>
+  </entry>
+
+  <entry>
+    <title>타입과 타입 시스템 : 연재를 시작하며</title>
+    <link href="http://ahnheejong.name/articles/types-intro" />
+    <id>http://ahnheejong.name/articles/types-intro/</id>
+    <updated>2017-10-11T21:00+09</updated>
+    <summary>[타입과 타입 시스템] 연재 첫 번째 글. 연재의 동기와 연재 게획을 다룬다.</summary>
+  </entry>
+
+  <entry>
+    <title>The XY Problem</title>
+    <link href="http://ahnheejong.name/articles/the-xy-problem" />
+    <id>http://ahnheejong.name/articles/the-xy-problem/</id>
+    <updated>2017-09-18T21:00+09</updated>
+    <summary>누구나 한 번쯤 빠지기 쉬운 XY Problem 소개.</summary>
+  </entry>
+
+  <entry>
+    <title>나의 버건디 팔면체 : Three.js를 사용한 3D 그래픽스 입문기</title>
+    <link href="http://ahnheejong.name/articles/my-first-octahedron" />
+    <id>http://ahnheejong.name/articles/my-first-octahedron/</id>
+    <updated>2017-07-10T21:00+09</updated>
+    <summary>Three.js를 이용해 3D 그래픽스에 입문하면서 배운 기초 지식 정리.</summary>
+  </entry>
+
+</feed>
