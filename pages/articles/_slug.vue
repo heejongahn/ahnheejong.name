@@ -30,10 +30,10 @@ export default {
     return { slug: params.slug, body: r.data, meta: payload || null }
   },
   head () {
-    const title = this.meta ? this.meta.title : 'ahn [at] 🇰🇷'
+    const { title, description } = this.meta || { title: 'ahn [at] 🇰🇷' }
     const url = `http://ahnheejong.name/articles/${this.slug}/`
 
-    return getHead(title, url)
+    return getHead(title, url, description)
   },
   mounted () {
     this.$refs.container.parentElement.scrollTop = 0
