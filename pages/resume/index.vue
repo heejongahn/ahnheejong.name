@@ -217,6 +217,7 @@ export default {
 
 <style module lang="scss">
 @import '~assets/variables';
+@import '~assets/placeholders';
 @import '~assets/media-query';
 
 .resume {
@@ -278,6 +279,10 @@ export default {
   small {
     color: $text-color-gray;
     margin-left: 4px;
+  }
+
+  a {
+    @extend %anchor-skip-underline;
   }
 
   .military {

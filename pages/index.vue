@@ -107,6 +107,7 @@ export default {
 
 <style scoped lang="scss">
 @import '~assets/media-query';
+@import '~assets/placeholders';
 
 .language-selector {
   cursor: pointer;
@@ -125,6 +126,10 @@ export default {
 
   ul {
     margin-top: 1em;
+  }
+
+  a {
+    @extend %anchor-skip-underline;
   }
 
   @include wide-screen {

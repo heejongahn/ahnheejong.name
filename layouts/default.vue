@@ -104,4 +104,10 @@ footer {
     margin-bottom: 0;
   }
 }
+
+.footer {
+  a {
+    @extend %anchor-skip-underline;
+  }
+}
 </style>

@@ -59,6 +59,7 @@ export default {
 </script>
 
 <style module lang="scss">
+@import '~assets/placeholders';
 @import '~assets/media-query';
 
 .title {
@@ -99,8 +100,7 @@ export default {
   }
 
   a {
-    background-color: transparent;
-    -webkit-text-decoration-skip: objects;
+    @extend %anchor-skip-underline;
   }
 
   a:active,
