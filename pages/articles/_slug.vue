@@ -63,8 +63,10 @@ export default {
 @import '~assets/media-query';
 
 .title {
+  line-height: 1.2;
   margin: 0;
   font-size: 4em;
+  word-wrap: break-word;
 
   @include wide-screen {
     word-break: keep-all;

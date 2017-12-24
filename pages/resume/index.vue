@@ -43,8 +43,14 @@
       <div :class="[$style.subsection, $style.experienceItem]">
         <h2 :class="$style.experienceTitle">Programmer, <mark>Hyperconnect</mark> </h2>
         <p :class="$style.experienceDate">October 2017 - present</p>
-        <p :class="$style.experienceIntro">Working as a web frontend developer (to be updated).</p>
+        <p :class="$style.experienceIntro">Hyperconnect provides various video-communication applications, built on top of WebRTC.</p>
         <div :class="$style.experienceDetail">
+          <h3>Late 2017</h3>
+          <ul>
+            <li><strong>Implemented and refactor the layout</strong> for <mark>Azar Go</mark>, the web version of Azar (currently only released to TW), using <mark>Vue.js</mark>, <mark>Vuex</mark> etc.</li>
+            <li>Maintained and improved <strong>real-time P2P video communication feature</strong> using <mark>WebRTC</mark>.</li>
+            <li><strong>Ported face-following sticker application feature</strong> from Azar apps, using <mark>WebGL</mark> and ULSee.</li>
+          </ul>
         </div>
       </div>
       <div :class="[$style.subsection, $style.experienceItem]">
