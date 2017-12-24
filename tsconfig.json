@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "es2015",
+        "moduleResolution": "node",
+        "lib": [
+            "dom",
+            "scripthost",
+            "es5",
+            "es6",
+            "es2015",
+            "es2016.array.include",
+            "es2017.object",
+            "esnext.asynciterable"
+        ],
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": false,
+        "preserveConstEnums": false,
+        "emitDecoratorMetadata": false,
+        "experimentalDecorators": true,
+        "strictNullChecks": true,
+        "noImplicitThis": false,
+        "noUnusedLocals": true,
+        "removeComments": true
+    },
+    "compileOnSave": true
+}
