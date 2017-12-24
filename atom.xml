@@ -12,6 +12,15 @@
   </author>
 
   <entry>
+    <title>ECMAScript와 TC39</title>
+    <link href="http://ahnheejong.name/articles/ecmascript-tc39" />
+    <id>http://ahnheejong.name/articles/ecmascript-tc39/</id>
+    <updated>2017-12-24T21:00+09</updated>
+    <summary>자바스크립트 언어의 표준인 ECMAScript와 TC39에 대해 소개합니다.</summary>
+  </entry>
+
+
+  <entry>
     <title>play.node 2017 발표기</title>
     <link href="http://ahnheejong.name/articles/playnode-2017" />
     <id>http://ahnheejong.name/articles/playnode-2017/</id>
