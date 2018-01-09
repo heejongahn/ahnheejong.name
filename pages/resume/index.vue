@@ -41,75 +41,71 @@
     <section :class="$style.experience">
       <h1>Experience</h1>
       <div :class="[$style.subsection, $style.experienceItem]">
-        <h2 :class="$style.experienceTitle">Programmer, <mark>Hyperconnect</mark> </h2>
+        <h2 :class="$style.experienceTitle">Frontend Programmer, <mark>Hyperconnect</mark> </h2>
         <p :class="$style.experienceDate">October 2017 - present</p>
-        <p :class="$style.experienceIntro">Hyperconnect provides various video-communication applications, built on top of WebRTC.</p>
         <div :class="$style.experienceDetail">
           <h3>Late 2017</h3>
           <ul>
-            <li><strong>Implemented and refactor the layout</strong> for <mark>Azar Go</mark>, the web version of Azar (currently only released to TW), using <mark>Vue.js</mark>, <mark>Vuex</mark> etc.</li>
-            <li>Maintained and improved <strong>real-time P2P video communication feature</strong> using <mark>WebRTC</mark>.</li>
-            <li><strong>Ported face-following sticker application feature</strong> from Azar apps, using <mark>WebGL</mark> and ULSee.</li>
+            <li><strong>Implemented and refactored the layout</strong> for <i>Azar Go</i> (currently only available in TW), the web version of <i><a target="_blank" href="https://azarlive.com">Azar</a></i>. Used <mark>Vue.js</mark>, <mark>TypeScript</mark>, and <mark>Webpack</mark> etc.</li>
+            <li><strong>Ported face-tracking sticker application feature</strong> from <i>Azar</i> app, using <mark>WebGL</mark>.</li>
           </ul>
         </div>
       </div>
       <div :class="[$style.subsection, $style.experienceItem]">
         <h2 :class="$style.experienceTitle">Programmer, <mark>Spoqa</mark> </h2>
         <p :class="$style.experienceDate">January 2017 - September 2017</p>
-        <p :class="$style.experienceIntro">Spoqa provides various B2B solutions to help local and brand stores’ customer management.</p>
         <div :class="$style.experienceDetail">
           <h3>Q1 (January 2017 - March 2017)</h3>
-          <p>Being one of two programmers of the team, <strong>took charge of the frontend side</strong> of the latest product of Spoqa, <mark>Dodo Manager</mark>.</p>
+          <p><strong>Took charge of the frontend side</strong> of the latest product, <i>Dodo Manager</i>.</p>
           <ul>
-            <li><strong>Implemented SPA from scratch</strong> modern web technologies such as <mark>React.js</mark>, <mark>Redux</mark> and <mark>the latest features of ECMAScript</mark>.</li>
-            <li><strong>Weaved responsive layout</strong> with heavy use of <mark>flexbox</mark>, which works well in various environments including CEF, tablet, and web browser.</li>
+            <li><strong>Implemented SPA from scratch</strong> using modern web technologies such as <mark>React.js</mark>, <mark>Redux</mark>, <mark>Webpack</mark> and <mark>the latest ECMAScript features</mark>.</li>
+            <li><strong>Weaved responsive layout</strong> which works well in various environments CEF, tablet, and web browser. The layout heavily relies on <mark>flexbox</mark>.</li>
           </ul>
         </div>
         <div :class="$style.experienceDetail">
           <h3>Q2 (April 2017 - June 2017)</h3>
-          <p>For the second quarter, the team migrated an improved version of <mark>Dodo Message</mark>, a message based marketing platform into Dodo Manager.</p>
+          <p>Integrated <i>Dodo Message</i>, a message-based marketing platform.</p>
           <ul>
-            <li>Implemented ‘Message’ part of the app, which includes <strong>multi-step message writing form</strong> and <strong>simple dashboard for marketing result analysis</strong>.</li>
-            <li>Made <strong>challenging UI components</strong> like a small text editor with auto input button, slide-based range selector and so on.</li>
+            <li>Implemented ‘Message’ part. The part includes <strong>multi-step message writing wizard</strong> and <strong>simple dashboard for marketing result analysis</strong>.</li>
+            <li><strong>Built challenging UI components</strong> like a small text editor with auto input button, slide-based range selector and so on.</li>
           </ul>
         </div>
         <div :class="$style.experienceDetail">
           <h3>Q3 (July 2017 - Present)</h3>
-          <p>To officially launch the product, the team focuses on making the app more robust.</p>
+          <p>To officially launch the product, focused on making the app more robust.</p>
           <ul>
-            <li><strong>Replace entire codebase</strong> using Facebook’s <mark>Flow</mark> with MS’s <mark>Typescript</mark> for higher productivity and stability.</li>
-            <li><strong>Adapt automated e2e and unit testing environment</strong> using <mark>Selenium</mark>, <mark>Mocha</mark>, and other testing libraries / frameworks.</li>
-            <li>Implement ‘Analysis’ part of the app, by providing <strong>visualization of customer statistics</strong> for the stores.</li>
+            <li><strong>Migrated entire codebase</strong> from <mark>Flow</mark> to <mark>TypeScript</mark> for higher productivity and stability.</li>
+            <li><strong>Setup automated e2e testing environment</strong> using <mark>Selenium</mark> and <mark>Mocha</mark>.</li>
           </ul>
-          <p>For Q3, I’m also <strong>in charge of organizing the project timeline</strong> of the team. </p>
+          <p>For Q3, I also <strong>took charge of organizing the project timeline</strong> of the team.</p>
         </div>
       </div>
     </section>
     <section :class="$style.skills">
-      <h1>Skills</h1>
+      <h1>Skill</h1>
       <div :class="[$style.subsection, $style.skill]">
         <h2>Modern Web Frontend</h2>
-        <p>The borderline between code and design is my main playground. I enjoy implementing both performance-wise and aesthetic-wise solid product. </p>
+        <p><strong>The borderline between code and design</strong> is my main playground. I enjoy implementing both performance-wise and aesthetic-wise solid product. </p>
         <div :class="$style.frontend">
           <h3>ECMAScript</h3>
           <ul>
-            <li>Experience up to ES8; solid understanding of core language</li>
-            <li>Static Type Checking <small>Typescript, Flow</small></li>
+            <li>Experience up to ES8; solid understanding of the core language</li>
+            <li>Static Type Checking <small>TypeScript, Flow</small></li>
           </ul>
         </div>
         <div :class="$style.frontend">
           <h3>Functional approaches on UI</h3>
           <ul>
-            <li>React.js (+ redux, react-router, ...)</li>
-            <li>Vue.js</li>
+            <li>React.js <small>+ redux, react-router, …</small></li>
+            <li>Vue.js <small>+ vuex, vue-rotuer, …</small></li>
             <li>Elm</li>
           </ul>
         </div>
         <div :class="$style.frontend">
           <h3>Styling</h3>
           <ul>
-            <li>CSS (+ css-module)</li>
-            <li>CSS Preprocessor <small>SASS, Stylus</small></li>
+            <li>CSS <small>+ css-module</small></li>
+            <li>CSS Preprocessor <small>SASS, LESS, Stylus</small></li>
             <li>PostCSS</li>
           </ul>
         </div>
@@ -118,8 +114,7 @@
           <ul>
             <li>CSS transition / animation</li>
             <li>Three.js</li>
-            <li>HTML5 Canvas</li>
-            <li>SVG</li>
+            <li>HTML5 Canvas &amp; SVG</li>
           </ul>
         </div>
         <div :class="$style.frontend">
@@ -128,7 +123,7 @@
             <li>Webpack</li>
             <li>Babel</li>
             <li>Package manager <small>npm, yarn</small></li>
-            <li>Linter <small>eslint, tslint</small></li>
+            <li>Coding convention <small>prettier, eslint</small></li>
           </ul>
         </div>
         <div :class="$style.frontend">
@@ -141,23 +136,23 @@
       </div>
       <div :class="[$style.subsection, $style.skill]">
         <h2>Programmers' Essentials</h2>
-        <p>Though these skills are outside of my main interest, I have basic level of understanding on them as they're essential to any programmer.</p>
+        <p>Though skills below are beyond my main interest, <br>I have basic understanding on them as they're essential to any programmer.</p>
         <ul>
-          <li><strong>VCS</strong>: Using <mark>git</mark> since 2014 on a daily basis. For any project, my first command is always  <code class='code-inline'>git init</code>.</li>
+          <li><strong>VCS</strong>: Using <mark>git</mark> since 2014. My first command for any project is <code class='code-inline'>git init</code>.</li>
+          <li><strong>Theoretical background</strong>: Knowledge of widely used DS and basic algorithm.</li>
           <li><strong>Server-side programming</strong>: Python<small>(Flask + SQLAlchemy)</small>, Node<small>(express.js)</small>.</li>
-          <li><strong>Theoretical CS background</strong>: Knowledge of widely used DS and basic algorithm.</li>
+          <li><strong>Server Administration</strong>: UNIX-like, CLI utils, AWS<small>(EC2, S3, CloudFront, Route53)</small>.</li>
           <li><strong>System programming</strong>: Have implemented minimal assembler, OS<small>(PintOS)</small> during undergraduate curriculum.</li>
-          <li><strong>Server Administration</strong>: UNIX-like environment, CLI utilities, AWS<small>(EC2, S3, CloudFront, Route53)</small>.</li>
         </ul>
       </div>
       <div :class="[$style.subsection, $style.skill]">
         <h2>Functional Programming</h2>
-        <p>I’ve learnt a lot of nice practices from <strong>the principles of functional programming</strong>. Whenever I confront interesting problems, this is my main toolbox to look at.</p>
+        <p>I’ve learnt a lot from <strong>the principles of functional programming</strong>.<br>Whenever I confront interesting problems, this is my main toolbox to look at.</p>
         <ul>
           <li><strong>Favor composition over inheritance</strong>.</li>
-          <li>Utilize power of simple functions like <code>map</code>, <code>reduce</code>, and <code>filter</code>.</li>
+          <li><strong>Utilize the power of simple functions</strong> like <code>map</code>, <code>reduce</code>, and <code>filter</code>.</li>
           <li><strong>Control side effects</strong>; Keep it referentially transparent whenever possible.</li>
-          <li><strong>Using ADT</strong> to enable precise data encoding.</li>
+          <li><strong>Use ADT</strong> to enable precise data encoding.</li>
         </ul>
       </div>
     </section>
@@ -165,23 +160,23 @@
       <h1>Additional Information</h1>
       <div :class="[$style.subsection, $style.links]">
         <h2>Links</h2>
-        <p>When I leave trails on the web, I try to do so with my identity revealed.  I believe this policy helps me stay responsible.</p>
+        <p>When I leave trails on the web, I try to do so with my identity revealed.<br>I believe this policy helps me stay responsible.</p>
         <ul>
-          <li>Personal blog: <a target="_blank" href="https://hjlog.me">https://hjlog.me</a></li>
-          <li>Github: <a target="_blank" href="https://github.com/heejongahn">https://github.com/heejongahn</a></li>
-          <li>Twitter: <a target="_blank" href="http://twitter.com/heejongahn">twitter.com/heejongahn</a></li>
-          <li>LinkedIn: <a target="_blank" href="https://linkedin.com/in/heejongahn">https://linkedin.com/in/heejongahn</a></li>
-          <li>Slideshare: <a target="_blank" href="https://www.slideshare.net/HeejongAhn/">https://www.slideshare.net/HeejongAhn/</a></li>
-          <li>Medium: <a target="_blank" href="https://medium.com/@heejongahn">https://medium.com/@heejongahn</a></li>
+          <li>Personal blog – <a target="_blank" href="https://hjlog.me">https://hjlog.me</a></li>
+          <li>Github – <a target="_blank" href="https://github.com/heejongahn">https://github.com/heejongahn</a></li>
+          <li>Twitter – <a target="_blank" href="http://twitter.com/heejongahn">twitter.com/heejongahn</a></li>
+          <li>LinkedIn – <a target="_blank" href="https://linkedin.com/in/heejongahn">https://linkedin.com/in/heejongahn</a></li>
+          <li>Slideshare – <a target="_blank" href="https://www.slideshare.net/HeejongAhn/">https://www.slideshare.net/HeejongAhn/</a></li>
+          <li>Medium – <a target="_blank" href="https://medium.com/@heejongahn">https://medium.com/@heejongahn</a></li>
         </ul>
       </div>
       <div :class="[$style.subsection, $style.miscs]">
         <h2>Miscellaneous</h2>
-        <p>Some experiences which won't make me a superstar programmer yet I personally am proud of.</p>
+        <p>Experiences which won't make me a superstar programmer yet I personally am proud of.</p>
         <ul>
-          <li>In July 2014, I worked shortly at <strong>the very first stage of a media startup</strong>, <mark>Byline</mark>, in San Francisco. Though I couldn’t contribute much and forgot almost everything I’ve learnt, it sure was fun and valuable startup experience.</li>
-          <li>In June 2015, I participated to <mark>The Rust Programming Book</mark> Korean translation project. About that time, I also made <strong>my first open-source contribution</strong>: broken documentation link fix to <mark>Rust</mark> repository.</li>
           <li>In Fall 2016, I organized and led <strong>Haskell Programming Language Study</strong> in KAIST, using UPENN’s CIS194 class materials. A dozen of students participated throughout the semester.</li>
+          <li>In June 2015, I participated in <mark>The Rust Programming Book</mark> Korean translation project. About that time, I also made <strong>my first open-source contribution</strong>: documentation link fix to <mark>Rust</mark> repository.</li>
+          <li>In July 2014, I worked shortly at <strong>the very first stage of a media startup</strong>, <mark>Byline</mark>. Though I couldn’t contribute much and forgot almost everything I’ve learnt, it sure was fun and valuable startup experience.</li>
         </ul>
       </div>
     </section>
