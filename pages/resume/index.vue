@@ -174,9 +174,9 @@
         <h2>Miscellaneous</h2>
         <p>Experiences which won't make me a superstar programmer yet I personally am proud of.</p>
         <ul>
-          <li>In Fall 2016, I organized and led <strong>Haskell Programming Language Study</strong> in KAIST, using UPENN’s CIS194 class materials. A dozen of students participated throughout the semester.</li>
-          <li>In June 2015, I participated in <mark>The Rust Programming Book</mark> Korean translation project. About that time, I also made <strong>my first open-source contribution</strong>: documentation link fix to <mark>Rust</mark> repository.</li>
-          <li>In July 2014, I worked shortly at <strong>the very first stage of a media startup</strong>, <mark>Byline</mark>. Though I couldn’t contribute much and forgot almost everything I’ve learnt, it sure was fun and valuable startup experience.</li>
+          <li :class="$style.miscItem">In Fall 2016, I organized and led <strong>Haskell Programming Language Study</strong> in KAIST, using UPENN’s CIS194 class materials. A dozen of students participated throughout the semester.</li>
+          <li :class="$style.miscItem">In June 2015, I participated in <mark>The Rust Programming Book</mark> Korean translation project. About that time, I also made <strong>my first open-source contribution</strong>: documentation link fix to <mark>Rust</mark> repository.</li>
+          <li :class="$style.miscItem">In July 2014, I worked shortly at <strong>the very first stage of a media startup</strong>, <mark>Byline</mark>. Though I couldn’t contribute much and forgot almost everything I’ve learnt, it sure was fun and valuable startup experience.</li>
         </ul>
       </div>
     </section>
@@ -403,5 +403,11 @@ export default {
 .linkLabel {
   width: 150px;
   font-weight: 500;
+}
+
+.miscs {
+  .miscItem:not(:last-child) {
+    margin-bottom: 0.75em;
+  }
 }
 </style>
