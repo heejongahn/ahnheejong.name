@@ -162,12 +162,12 @@
         <h2>Links</h2>
         <p>When I leave trails on the web, I try to do so with my identity revealed.<br>I believe this policy helps me stay responsible.</p>
         <ul>
-          <li>Personal blog – <a target="_blank" href="https://hjlog.me">https://hjlog.me</a></li>
-          <li>Github – <a target="_blank" href="https://github.com/heejongahn">https://github.com/heejongahn</a></li>
-          <li>Twitter – <a target="_blank" href="http://twitter.com/heejongahn">twitter.com/heejongahn</a></li>
-          <li>LinkedIn – <a target="_blank" href="https://linkedin.com/in/heejongahn">https://linkedin.com/in/heejongahn</a></li>
-          <li>Slideshare – <a target="_blank" href="https://www.slideshare.net/HeejongAhn/">https://www.slideshare.net/HeejongAhn/</a></li>
-          <li>Medium – <a target="_blank" href="https://medium.com/@heejongahn">https://medium.com/@heejongahn</a></li>
+          <li :class="$style.link"><div :class="$style.linkLabel">Personal blog</div><a target="_blank" href="https://hjlog.me">https://hjlog.me</a></li>
+          <li :class="$style.link"><div :class="$style.linkLabel">Github</div><a target="_blank" href="https://github.com/heejongahn">https://github.com/heejongahn</a></li>
+          <li :class="$style.link"><div :class="$style.linkLabel">Twitter</div><a target="_blank" href="https://twitter.com/heejongahn">https://twitter.com/heejongahn</a></li>
+          <li :class="$style.link"><div :class="$style.linkLabel">LinkedIn</div><a target="_blank" href="https://linkedin.com/in/heejongahn">https://linkedin.com/in/heejongahn</a></li>
+          <li :class="$style.link"><div :class="$style.linkLabel">Slideshare</div><a target="_blank" href="https://www.slideshare.net/HeejongAhn/">https://www.slideshare.net/HeejongAhn/</a></li>
+          <li :class="$style.link"><div :class="$style.linkLabel">Medium</div><a target="_blank" href="https://medium.com/@heejongahn">https://medium.com/@heejongahn</a></li>
         </ul>
       </div>
       <div :class="[$style.subsection, $style.miscs]">
@@ -394,5 +394,14 @@ export default {
 .gpa {
   margin-left: 0.25em;
   font-size: 0.75em;
+}
+
+.link {
+  display: flex;
+}
+
+.linkLabel {
+  width: 150px;
+  font-weight: 500;
 }
 </style>
