@@ -282,10 +282,6 @@ export default {
     margin-left: 4px;
   }
 
-  a {
-    @extend %anchor-skip-underline;
-  }
-
   .military {
     margin: 0;
   }

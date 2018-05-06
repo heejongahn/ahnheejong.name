@@ -32,7 +32,7 @@
       <section class="work">
         <h2>일</h2>
         <div class="section-content">
-          <a target="_blank" href="https://toss.im/">Toss</a>를 만드는 비바리퍼블리카에서 웹 프론트엔드 프로그래머로 일하고 있습니다.
+          <a target="_blank" href="https://toss.im/">Toss</a>를 만드는 비바리퍼블리카에서 UI 프로그래머로 일하고 있습니다.
           강력한 타입 시스템을 가진 언어로 작업하는 것을 선호합니다.
           요즘은 개발과 디자인, 두 세계를 잇는 데에 관심이 많습니다.
           더 자세한 내용은 <nuxt-link to="/resume/">이력서</nuxt-link>를 참고하세요.
@@ -126,10 +126,6 @@ export default {
 
   ul {
     margin-top: 1em;
-  }
-
-  a {
-    @extend %anchor-skip-underline;
   }
 
   @include wide-screen {

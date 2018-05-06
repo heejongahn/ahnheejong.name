@@ -101,15 +101,6 @@ export default {
     line-height: 1.8;
   }
 
-  a {
-    @extend %anchor-skip-underline;
-  }
-
-  a:active,
-  a:hover {
-    outline-width: 0;
-  }
-
   strong {
     font-weight: inherit;
   }
