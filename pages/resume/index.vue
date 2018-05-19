@@ -15,39 +15,33 @@
         <li :class="$style.focus">Smoothly bridging the gap between code and design</li>
         <li :class="$style.focus">Programming languages adopting practical and powerful type systems</li>
       </ul>
-      <div :class="[$style.subsection, $style.interest]">
-        <h2>Interests</h2>
-        <ul>
-          <li>Making beautiful and usable things with robust and readable code.</li>
-          <li>Building a challenging, open team where good people get even better.</li>
-          <li>Improving by cooperation, not competition; <strong>open source spirit!</strong></li>
-        </ul>
-      </div>
       <div :class="[$style.subsection, $style.education]">
         <h2>Education</h2>
           <div :class="$style.educationItem">
-            <h3 :class="$style.educationTitle">KAIST</h3>
-            <p :class="$style.educationDate">2013 March - Present</p>
+            <h3 :class="$style.educationTitle">KAIST <small :class="$style.educationDate">2013 March – Present</small></h3>
             <p>Pursuing <strong>B.A. at School Of Computing</strong><span :class="$style.gpa">(GPA Total 3.62/4.3, Major 3.79/4.3)</span></p>
-            <small :class="$style.military">Currently on a break to do a alternative military service</small>
-          </div>
-          <div :class="$style.educationItem">
-            <h3 :class="$style.educationTitle">Gyeonggi Science High School</h3>
-            <p :class="$style.educationDate">2010 March - 2013 February</p>
-            <p>A student president</p>
+            <small :class="$style.military">Currently on a break, doing an alternative military service</small>
           </div>
       </div>
     </section>
     <section :class="$style.experience">
       <h1>Experience</h1>
       <div :class="[$style.subsection, $style.experienceItem]">
-        <h2 :class="$style.experienceTitle">Frontend Programmer, <mark>Hyperconnect</mark> </h2>
-        <p :class="$style.experienceDate">October 2017 - present</p>
+        <h2 :class="$style.experienceTitle">UI Engineer, <mark>Viva Republica</mark> </h2>
+        <p :class="$style.experienceDate">April 2018 - present</p>
         <div :class="$style.experienceDetail">
-          <h3>Late 2017</h3>
           <ul>
-            <li><strong>Implemented and refactored the layout</strong> for <i>Azar Go</i> (currently only available in TW), the web version of <i><a target="_blank" href="https://azarlive.com">Azar</a></i>. Used <mark>Vue.js</mark>, <mark>TypeScript</mark>, and <mark>Webpack</mark> etc.</li>
-            <li><strong>Ported face-tracking sticker application feature</strong> from <i>Azar</i> app, using <mark>WebGL</mark>.</li>
+            <li>To Be Updated</li>
+          </ul>
+        </div>
+      </div>
+      <div :class="[$style.subsection, $style.experienceItem]">
+        <h2 :class="$style.experienceTitle">Frontend Programmer, <mark>Hyperconnect</mark> </h2>
+        <p :class="$style.experienceDate">October 2017 - April 2018</p>
+        <div :class="$style.experienceDetail">
+          <ul>
+            <li><strong>Implemented &amp; refactored</strong> the web version of <i><a target="_blank" href="https://azarlive.com">Azar</a></i>. <small>Vue.js, TypeScript, and Webpack</small></li>
+            <li><strong>Ported face-tracking sticker application feature</strong> from <i>Azar</i> app. <small>WebGL</small></li>
           </ul>
         </div>
       </div>
@@ -55,29 +49,10 @@
         <h2 :class="$style.experienceTitle">Programmer, <mark>Spoqa</mark> </h2>
         <p :class="$style.experienceDate">January 2017 - September 2017</p>
         <div :class="$style.experienceDetail">
-          <h3>Q1 (January 2017 - March 2017)</h3>
-          <p><strong>Took charge of the frontend side</strong> of the latest product, <i>Dodo Manager</i>.</p>
           <ul>
-            <li><strong>Implemented SPA from scratch</strong> using modern web technologies such as <mark>React.js</mark>, <mark>Redux</mark>, <mark>Webpack</mark> and <mark>the latest ECMAScript features</mark>.</li>
-            <li><strong>Weaved responsive layout</strong> which works well in various environments CEF, tablet, and web browser. The layout heavily relies on <mark>flexbox</mark>.</li>
-          </ul>
-        </div>
-        <div :class="$style.experienceDetail">
-          <h3>Q2 (April 2017 - June 2017)</h3>
-          <p>Integrated <i>Dodo Message</i>, a message-based marketing platform.</p>
-          <ul>
-            <li>Implemented ‘Message’ part. The part includes <strong>multi-step message writing wizard</strong> and <strong>simple dashboard for marketing result analysis</strong>.</li>
-            <li><strong>Built challenging UI components</strong> like a small text editor with auto input button, slide-based range selector and so on.</li>
-          </ul>
-        </div>
-        <div :class="$style.experienceDetail">
-          <h3>Q3 (July 2017 - Present)</h3>
-          <p>To officially launch the product, focused on making the app more robust.</p>
-          <ul>
+            <li><strong>Built initial version of Dodo Manager</strong>, the store management tool, from scratch. <small>React.js, Redux, and Webpack</small></li>
             <li><strong>Migrated entire codebase</strong> from <mark>Flow</mark> to <mark>TypeScript</mark> for higher productivity and stability.</li>
-            <li><strong>Setup automated e2e testing environment</strong> using <mark>Selenium</mark> and <mark>Mocha</mark>.</li>
           </ul>
-          <p>For Q3, I also <strong>took charge of organizing the project timeline</strong> of the team.</p>
         </div>
       </div>
     </section>
@@ -85,18 +60,18 @@
       <h1>Skill</h1>
       <div :class="[$style.subsection, $style.skill]">
         <h2>Modern Web Frontend</h2>
-        <p><strong>The borderline between code and design</strong> is my main playground. I enjoy implementing both performance-wise and aesthetic-wise solid product. </p>
+        <p><strong>The borderline between code and design</strong> is my main playground. I enjoy implementing both performance-wise and aesthetic-wise solid product.</p>
         <div :class="$style.frontend">
           <h3>ECMAScript</h3>
           <ul>
-            <li>Experience up to ES8; solid understanding of the core language</li>
+            <li>Comfortable with the latest ECMAScript feature and proposals; solid understanding of the core language</li>
             <li>Static Type Checking <small>TypeScript, Flow</small></li>
           </ul>
         </div>
         <div :class="$style.frontend">
           <h3>Functional approaches on UI</h3>
           <ul>
-            <li>React.js <small>+ redux, react-router, …</small></li>
+            <li>React.js <small>+ react-router, redux, redux-saga, …</small></li>
             <li>Vue.js <small>+ vuex, vue-rotuer, …</small></li>
             <li>Elm</li>
           </ul>
@@ -104,39 +79,35 @@
         <div :class="$style.frontend">
           <h3>Styling</h3>
           <ul>
-            <li>CSS <small>+ css-module</small></li>
-            <li>CSS Preprocessor <small>SASS, LESS, Stylus</small></li>
-            <li>PostCSS</li>
+            <li>CSS <small>+ css-module, styled-components</small></li>
+            <li>CSS Preprocessor <small>SASS, LESS, Stylus</small> and PostCSS</li>
           </ul>
         </div>
         <div :class="$style.frontend">
           <h3>Graphics and Interaction</h3>
           <ul>
             <li>CSS transition / animation</li>
-            <li>Three.js</li>
-            <li>HTML5 Canvas &amp; SVG</li>
+            <li>SVG, HTML5 Canvas, Three.js</li>
           </ul>
         </div>
         <div :class="$style.frontend">
           <h3>Ecosystem</h3>
           <ul>
-            <li>Webpack</li>
-            <li>Babel</li>
-            <li>Package manager <small>npm, yarn</small></li>
-            <li>Coding convention <small>prettier, eslint</small></li>
+            <li>Build toolchain <small>Webpack, Babel</small></li>
+            <li>Coding convention <small>Prettier, ESLint</small></li>
           </ul>
         </div>
         <div :class="$style.frontend">
           <h3>Miscellaneous</h3>
           <ul>
             <li>Static Site Generation <small>Nuxt.js, Jekyll, Lektor</small></li>
-            <li>Google Analytics</li>
+            <li>Google Analytics, Google Tag Manager</li>
           </ul>
         </div>
       </div>
       <div :class="[$style.subsection, $style.skill]">
         <h2>Programmers' Essentials</h2>
-        <p>Though skills below are beyond my main interest, <br>I have basic understanding on them as they're essential to any programmer.</p>
+        <p>Though skills below are beyond my main interest, <br>I have basic understanding on them.</p>
         <ul>
           <li><strong>VCS</strong>: Using <mark>git</mark> since 2014. My first command for any project is <code class='code-inline'>git init</code>.</li>
           <li><strong>Theoretical background</strong>: Knowledge of widely used DS and basic algorithm.</li>
@@ -318,12 +289,8 @@ export default {
 }
 
 .oneLiner {
-  font-size: 1.5em;
-  margin: 1em 0;
-}
-
-.focus {
-  font-weight: bold;
+  font-size: 1em;
+  margin: 0 0 0.5em;
 }
 
 .frontend {
@@ -385,6 +352,11 @@ export default {
 .experienceTitle,
 .educationTitle {
   margin-bottom: 0.25em;
+}
+
+.educationDate {
+  font-weight: normal;
+  font-size: 0.625em;
 }
 
 .gpa {
