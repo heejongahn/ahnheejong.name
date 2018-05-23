@@ -33,15 +33,15 @@ ul {
   margin: 0;
   padding: 0;
   padding-left: 18px;
-}
 
-li {
-  list-style-type: none;
+  li {
+    list-style-type: none;
 
-  &:before {
-    content: '\BB';
-    margin-left: -18px;
-    padding-right: 10px;
+    &:before {
+      content: '\BB';
+      margin-left: -18px;
+      padding-right: 10px;
+    }
   }
 }
 
