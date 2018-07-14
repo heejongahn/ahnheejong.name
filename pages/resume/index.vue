@@ -133,7 +133,6 @@
         <h2>Links</h2>
         <p>When I leave trails on the web, I try to do so with my identity revealed.<br>I believe this policy helps me stay responsible.</p>
         <ul>
-          <li :class="$style.link"><div :class="$style.linkLabel">Personal blog</div><a target="_blank" href="https://hjlog.me">https://hjlog.me</a></li>
           <li :class="$style.link"><div :class="$style.linkLabel">Github</div><a target="_blank" href="https://github.com/heejongahn">https://github.com/heejongahn</a></li>
           <li :class="$style.link"><div :class="$style.linkLabel">Twitter</div><a target="_blank" href="https://twitter.com/heejongahn">https://twitter.com/heejongahn</a></li>
           <li :class="$style.link"><div :class="$style.linkLabel">LinkedIn</div><a target="_blank" href="https://linkedin.com/in/heejongahn">https://linkedin.com/in/heejongahn</a></li>

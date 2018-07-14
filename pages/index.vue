@@ -43,7 +43,7 @@
         <div class="section-content">일을 안 할 때는 술을 마시거나, 책을 읽거나, 글을 씁니다.
           술 중에서도 맥주, 맥주 중에서도 스타우트를 가장 좋아합니다.
           책은 가리지 않고 읽으려 노력하지만 읽는 책 열 권 중 아홉 권은 문학입니다.
-          제 글은 <a href="/articles">아티클 모음</a>, 그리고 <a target="_blank" href="https://hjlog.me">커플 블로그</a>에서 읽어보실 수 있습니다.
+          제 글은 <a href="/articles">아티클 모음</a>에서 읽어보실 수 있습니다.
         </div>
       </section>
     </main>
@@ -82,7 +82,7 @@
         <div class="section-content">i drink, read, listen to music or write during my free time.
           i prefer beer among all alcoholic drinks, and stout among all beers.
           i try not to be picky on genres, but mostly end up with novels somehow.
-          you can find my writings on <a href="/articles">articles menu</a> and <a target="_blank" href="https://hjlog.me">my couple blog</a>(mostly in Korean).
+          you can find my writings on <a href="/articles">articles menu</a> (mostly in Korean).
         </div>
       </section>
     </main>
