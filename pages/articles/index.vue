@@ -12,8 +12,6 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 import { getHead } from '~/utils'
 
 const S3_BASE_PATH = 'https://s3.ap-northeast-2.amazonaws.com/ahnheejong.name-articles'
@@ -22,8 +20,8 @@ const title = '📝 [from] ahj'
 const url = 'http://ahnheejong.name/articles/'
 
 export default {
-  async asyncData () {
-    const r = await axios(`${S3_BASE_PATH}/index.json`, { responseType: 'json' })
+  async asyncData ({ app }) {
+    const r = await app.$axios(`${S3_BASE_PATH}/index.json`, { responseType: 'json' })
     return { articles: r.data }
   },
   head: getHead(title, url),

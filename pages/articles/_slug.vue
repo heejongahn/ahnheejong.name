@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import marked from 'marked'
 
 import { getHead } from '~/utils'
@@ -24,8 +23,8 @@ const S3_BASE_PATH = 'https://s3.ap-northeast-2.amazonaws.com/ahnheejong.name-ar
 
 export default {
   async asyncData (context) {
-    const { params, payload } = context
-    const r = await axios(`${S3_BASE_PATH}/${params.slug}/article.md`)
+    const { app, params, payload } = context
+    const r = await app.$axios(`${S3_BASE_PATH}/${params.slug}/article.md`)
 
     return { slug: params.slug, body: r.data, meta: payload || null }
   },
@@ -42,7 +41,7 @@ export default {
     if (articles[this.slug] != null) {
       this.meta = articles[this.slug]
     } else {
-      axios(`${S3_BASE_PATH}/index.json`, { responseType: 'json' })
+      this.$axios(`${S3_BASE_PATH}/index.json`, { responseType: 'json' })
       .then(res => {
         const articles = res.data
         const meta = articles.find(article => article.slug === this.slug)
