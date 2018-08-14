@@ -4,23 +4,11 @@
       heejong
     </nuxt-link>
     <div
-      @click="navToggleClicked()"
       :class="navCollapsed ? $style.navToggle : [$style.navToggle, $style.opened]">
-      <div :class="$style.navToggleBar"></div>
-      <div :class="$style.navToggleBar"></div>
-      <div :class="$style.navToggleBar"></div>
+      <nuxt-link to="/about" :class="$style.navLink" :exact-active-class="$style.active">
+        about
+      </nuxt-link>
     </div>
-    <nav :class="navCollapsed ? $style.nav : [$style.nav, $style.visible]">
-      <nuxt-link to="/" :class="$style.navLink" :exact-active-class="$style.active">
-        <span @click="navCollapse()" :class="$style.navEmoji">🏡</span><span :class="$style.navLabel">home</span>
-      </nuxt-link>
-      <nuxt-link to="/articles/" :class="$style.navLink" :active-class="$style.active">
-        <span @click="navCollapse()" :class="$style.navEmoji">📝</span><span :class="$style.navLabel">articles</span>
-      </nuxt-link>
-      <nuxt-link to="/palette/" :class="$style.navLink" :active-class="$style.active">
-        <span @click="navCollapse()" :class="$style.navEmoji">🎨</span><span :class="$style.navLabel">palette</span>
-      </nuxt-link>
-    </nav>
     <octahedron :class="$style.octahedron" />
   </header>
 </template>
@@ -30,30 +18,7 @@ import Octahedron from '~/components/Octahedron'
 
 export default {
   data () {
-    return {
-      navCollapsed: true
-    }
-  },
-  methods: {
-    navToggleClicked: function () {
-      this.navCollapsed = !this.navCollapsed
-    },
-    navCollapse: function () {
-      this.navCollapsed = true
-    },
-    closeHandler: function (e) {
-      if (!this.$el.contains(e.target)) {
-        this.navCollapsed = true
-      }
-    }
-  },
-  mounted () {
-    window.addEventListener('click', this.closeHandler)
-    window.addEventListener('touchend', this.closeHandler)
-  },
-  beforeDestroy () {
-    window.removeEventListener('click', this.closeHandler)
-    window.removeEventListener('touchend', this.closeHandler)
+    return {}
   },
   components: {
     octahedron: Octahedron
@@ -67,18 +32,7 @@ export default {
 @import '~assets/placeholders';
 
 $header-height: 60px;
-$nav-link-size: 40px;
 
-%nav-link-base {
-  width: $nav-link-size;
-  height: $nav-link-size;
-  border-radius: 20px;
-  background-color: rgba($bg-gray, 0.9);
-
-  @include wide-screen {
-    background: none;
-  }
-}
 
 header {
   z-index: 1000;
@@ -132,46 +86,6 @@ header {
   }
 }
 
-.navToggle {
-  @extend %nav-link-base;
-
-  padding: 11px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-
-  @include wide-screen {
-    display: none;
-  }
-}
-
-.navToggleBar {
-  width: 100%;
-  height: 2px;
-  border-top: 2px solid $border-color-dark;
-
-  transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transform-origin: center;
-}
-
-.navToggle.opened {
-  .navToggleBar {
-    &:first-child {
-      transform: translateY(6px) rotate(45deg);
-    }
-
-    &:last-child {
-      transform: translateY(-6px) rotate(-45deg);
-    }
-
-    &:nth-child(2) {
-      opacity: 0;
-    }
-  }
-}
-
 .nav {
   position: absolute;
   top: $header-height;
@@ -193,70 +107,15 @@ header {
 
 .navLink {
   @extend %reset-anchor-style;
-  @extend %nav-link-base;
   display: flex;
-  transition: transform,opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-
-  opacity: 0;
-  pointer-events: none;
-  animation-fill-mode: forwards;
-
-  transform: translateY(10px);
 
   justify-content: center;
   align-items: center;
 
-  line-height: 1;
-
-  font-size: 1.5em;
-
-  margin-bottom: 20px;
-
   @include wide-screen {
-    pointer-events: initial;
-    transform: none;
-
+    margin: 1em 0;
     justify-content: flex-start;
-    opacity: initial;
-
-    width: auto;
-    height: auto;
-
-    font-size: 1em;
-
-    border: none;
-  }
-}
-
-@mixin popup($i, $disabled: false) {
-  $start: 0% + 15 * $i;
-  $end: 50% + 15 * $i;
-
-  $target-opacity: 1;
-  @if $disabled == true {
-    $target-opacity: 0.5;
-  }
-
-  @keyframes popup#{$i} {
-    0% {
-      transform: translateY(10px);
-      opacity: 0;
-    }
-
-    #{$start} {
-      transform: translateY(10px);
-      opacity: 0;
-    }
-
-    #{$end} {
-      transform: translateY(0);
-      opacity: $target-opacity;
-    }
-
-    100% {
-      transform: translateY(0);
-      opacity: $target-opacity;
-    }
+    font-size: 1.25em;
   }
 }
 
@@ -268,15 +127,6 @@ header {
     pointer-events: initial;
   }
 
-  @for $i from 0 to 3 {
-    @include popup($i);
-
-    .navLink:nth-child(#{$i + 1}) {
-      animation-name: popup#{$i};
-      animation-duration: 1s;
-    }
-  }
-
   .disabled {
     pointer-events: none;
     cursor: not-allowed;
@@ -285,7 +135,12 @@ header {
 
 .navLink {
   &.active {
-    font-weight: bold;
+    font-weight: 500;
+
+    &:hover,
+    &:active {
+      color: black;
+    }
   }
 
   @include wide-screen {
@@ -296,7 +151,6 @@ header {
 }
 
 .navLabel {
-  display: none;
   margin-left: 12px;
 
   @include wide-screen {
