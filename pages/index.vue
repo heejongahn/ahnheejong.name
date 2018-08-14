@@ -85,6 +85,7 @@ export default {
 .tags {
   display: flex;
   margin-top: 12px;
+  flex-wrap: wrap;
 }
 
 .tag {
@@ -94,6 +95,7 @@ export default {
   border-radius: 6px;
   background-color: rgba(#000000, 0.1);
   margin-right: 8px;
+  margin-bottom: 8px;
 }
 
 </style>
